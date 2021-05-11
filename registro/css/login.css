@@ -285,7 +285,8 @@ h6 {
   padding-top: 180px;
 }
 .p-l-50{
-    margin-left:180px;
+    margin-left:230px;
+    position:relative;
 }
 
 .p-t-50 {
@@ -375,6 +376,8 @@ h6 {
   color: #fff;
   font-family: inherit;
 }
+
+
 
 .btn--radius {
   -webkit-border-radius: 3px;
