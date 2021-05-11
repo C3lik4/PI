@@ -725,16 +725,6 @@ input {
   color:white;
 }
 
-.animated-title {
-  width: 22ch;
-  animation: typing 2s steps(22), blink .5s step-end infinite alternate;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 3px solid;
-  font-family: 'Permanent Marker', cursive;
-  font-size: 2em;
-  
-}
 
 /* ==========================================================================
    #CARD
@@ -773,28 +763,7 @@ input {
   -moz-border-radius-topright: 10px;
   border-top-right-radius: 10px;
   
-  background: linear-gradient(270deg, #e891876e, #e8c88765, #e2e88780, #8ce88779, #87e8e575, #87b4e869, #8789e87c, #b887e870, #e887e575);
-  background-size: 1800% 1800%;
 
-  -webkit-animation: AnimationName 30s ease infinite;
-  -moz-animation: AnimationName 30s ease infinite;
-  animation: AnimationName 30s ease infinite;
-}
-
-@-webkit-keyframes AnimationName {
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
-}
-@-moz-keyframes AnimationName {
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
-}
-@keyframes AnimationName {
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
 }
 
 
