@@ -10,6 +10,7 @@ body {
   font-family: 'Permanent Marker', cursive;
   font-size:35px;
   text-align:center;
+  color:black;
   
 }
 
@@ -44,7 +45,7 @@ h2{
 
 
 /* =========Efectos Hovering============ */
-a.effect-underline:after {
+.effect-underline:after {
 	content: '';
   position: absolute;
   left: 0;
@@ -60,7 +61,7 @@ a.effect-underline:after {
 	transform: scale(0,1);
 }
 
-a.effect-underline:hover:after {
+.effect-underline:hover:after {
   opacity: 1;
 	-webkit-transform: scale(1);
 	transform: scale(1);
@@ -92,65 +93,7 @@ a.effect-shine:hover {
 
 
 
-/* animacion del titulo*/
 
-.shimmer {
-  text-align: center;
-  color: rgba(143, 143, 143, 0.1);
-  background: -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, rgb(0, 17, 252)));
-  background: -moz-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, rgb(0, 17, 252)));
-  background: gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, rgb(0, 17, 252)));
-  -webkit-background-size: 125px 100%;
-  -moz-background-size: 125px 100%;
-  background-size: 125px 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  background-clip: text;
-  -webkit-animation-name: shimmer;
-  -moz-animation-name: shimmer;
-  animation-name: shimmer;
-  -webkit-animation-duration: 5s;
-  -moz-animation-duration: 5s;
-  animation-duration: 5s;
-  -webkit-animation-iteration-count: infinite;
-  -moz-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  background-color: #222;
-}
-@-moz-keyframes shimmer {
-  0% {
-    background-position: top left;
-  }
-  100% {
-    background-position: top right;
-  }
-}
-@-webkit-keyframes shimmer {
-  0% {
-    background-position: top left;
-  }
-  100% {
-    background-position: top right;
-  }
-}
-@-o-keyframes shimmer {
-  0% {
-    background-position: top left;
-  }
-  100% {
-    background-position: top right;
-  }
-}
-@keyframes shimmer {
-  0% {
-    background-position: top left;
-  }
-  100% {
-    background-position: top right;
-  }
-}
 
 
 
