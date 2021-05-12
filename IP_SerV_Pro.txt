@@ -1,0 +1,5 @@
+http://18.207.133.82/
+
+PHPMYADMIN
+USER: root
+PASSWORD: tinckam1319
