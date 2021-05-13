@@ -147,11 +147,11 @@ a.effect-shine:hover {
 }
 
 .btn--green {
-  background: #57b846;
+  background: #17f04d;
 }
 
 .btn--green:hover {
-  background: #4dae3c;
+  background: #17f04d;
 }
 
 .btn--blue {
@@ -166,14 +166,19 @@ a.effect-shine:hover {
   background: #ff4b5a;
 }
 
-.btn--red:hover {
-  background: #eb3746;
+
+
+.btn--red:hover{
+  background-color: #17f04d;
 }
 
 .center{
   text-align: center;
 }
 
+.btn--no{
+  background: #ff4b5a;
+}
 
 
 
