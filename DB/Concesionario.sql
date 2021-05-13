@@ -20,20 +20,8 @@ SET time_zone = "+00:00";
 -- Database: `Concesionario`
 --
 
--- --------------------------------------------------------
-
---
--- Table structure for table `Anuncios`
---
-
-CREATE TABLE `Anuncios` (
-  `id_anuncio` int(11) NOT NULL,
-  `make_id` int(11) NOT NULL,
-  `model_id` int(11) NOT NULL,
-  `km` int(60) NOT NULL,
-  `ano` year(4) NOT NULL,
-  `precio` int(60) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE DATABASE IF NOT EXISTS concesionario;
+USE concesionario;
 
 -- --------------------------------------------------------
 
@@ -44,8 +32,64 @@ CREATE TABLE `Anuncios` (
 CREATE TABLE `make` (
   `id` int(10) NOT NULL,
   `code` varchar(55) NOT NULL DEFAULT '',
-  `title` varchar(55) NOT NULL DEFAULT ''
+  `title` varchar(55) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `model`
+--
+
+CREATE TABLE `model` (
+  `id` int(10) NOT NULL,
+  `make_id` int(10) NOT NULL DEFAULT '0',
+  `code` varchar(125) NOT NULL DEFAULT '',
+  `title` varchar(125) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`),
+  CONSTRAINT Fk_make_id FOREIGN KEY(`make_id`) REFERENCES make(`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Anuncios`
+--
+
+CREATE TABLE `Anuncios` (
+  `id_anuncio` int(11) NOT NULL AUTO_INCREMENT,
+  `make_id` int(11) NOT NULL,
+  `model_id` int(11) NOT NULL,
+  `km` int(60) NOT NULL,
+  `ano` year(4) NOT NULL,
+  `precio` int(60) NOT NULL,
+  `color` varchar(50) NOT NULL,
+  PRIMARY KEY (`id_anuncio`),
+  CONSTRAINT Fk_make_id_Anuncios FOREIGN KEY(`make_id`) REFERENCES make(`id`),
+  CONSTRAINT Fk_model_id_Anuncios FOREIGN KEY(`model_id`) REFERENCES model(`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Usuarios`
+--
+
+CREATE TABLE `Usuarios` (
+  `id` int(11),
+  `nombre` varchar(60) NOT NULL,
+  `apellidos` varchar(60) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `tlf` int(60) NOT NULL,
+  `contrasena` varchar(100) NOT NULL,
+  `dinero` int(11),
+  `id_anuncio` int(11),
+  PRIMARY KEY (`id`),
+  constraint Fk_id_anuncio foreign key( `id_anuncio`) references Anuncios( `id_anuncio`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
 
 --
 -- Dumping data for table `make`
@@ -125,17 +169,6 @@ INSERT INTO `make` (`id`, `code`, `title`) VALUES
 (71, 'YUGO', 'Yugo');
 
 -- --------------------------------------------------------
-
---
--- Table structure for table `model`
---
-
-CREATE TABLE `model` (
-  `id` int(10) NOT NULL,
-  `make_id` int(10) NOT NULL DEFAULT '0',
-  `code` varchar(125) NOT NULL DEFAULT '',
-  `title` varchar(125) NOT NULL DEFAULT ''
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `model`
@@ -1460,75 +1493,16 @@ INSERT INTO `model` (`id`, `make_id`, `code`, `title`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Usuarios`
---
-
-CREATE TABLE `Usuarios` (
-  `id` int(11) NOT NULL,
-  `nombre` varchar(60) NOT NULL,
-  `apellidos` varchar(60) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `tlf` int(60) NOT NULL,
-  `password` varchar(100) NOT NULL,
-  `dinero` int(11) NOT NULL,
-  `id_anuncio` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `Anuncios`
---
-ALTER TABLE `Anuncios`
-  ADD PRIMARY KEY (`id_anuncio`);
-
---
--- Indexes for table `make`
---
-ALTER TABLE `make`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `model`
---
-ALTER TABLE `model`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `Usuarios`
---
-ALTER TABLE `Usuarios`
-  ADD PRIMARY KEY (`id`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
---
--- AUTO_INCREMENT for table `Anuncios`
---
-ALTER TABLE `Anuncios`
-  MODIFY `id_anuncio` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `make`
---
-ALTER TABLE `make`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
-
---
--- AUTO_INCREMENT for table `model`
---
-ALTER TABLE `model`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1315;
 
 --
 -- AUTO_INCREMENT for table `Usuarios`
 --
 ALTER TABLE `Usuarios`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
