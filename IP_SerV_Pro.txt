@@ -1,4 +1,4 @@
-http://18.207.133.82/
+3.236.250.26
 
 PHPMYADMIN
 USER: root
