@@ -126,22 +126,6 @@ a.effect-shine:hover {
   font-family: inherit;
 }
 
-.btn-small{
-  display: inline-block;
-  line-height: 30px;
-  padding: 0 30px;
-  -webkit-transition: all 0.4s ease;
-  -o-transition: all 0.4s ease;
-  -moz-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-  cursor: pointer;
-  font-size: 10px;
-  text-transform: uppercase;
-  font-weight: 500;
-  color: #fff;
-  font-family: inherit;
-}
-
 
 
 .btn--radius {
@@ -192,15 +176,56 @@ a.effect-shine:hover {
   text-align: center;
 }
 
+.center2{
+  justify-content: center;
+}
+
 .btn--no{
   background: #ff4b5a;
 }
 
+.margen{
+  margin-top:200px;;
+}
 
+.margen_pequeno{
+  margin-top:76px;
+}
 
+.label{
+  font-family: 'Play', sans-serif;
+  color:white;
+}
 
+.down{
+  margin-bottom: 5%;
+}
 
+.bold{
+  font-weight: bold;
+  font-size:30px
+}
 
+/* alineacion de placeholders */
+input[type="number"]::placeholder { 
+                  
+  /* Firefox, Chrome, Opera */
+  text-align: right;
+}
+
+/*Para quitar las flechitas que se asignan al poner input type="number"*/
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
 
 
 
