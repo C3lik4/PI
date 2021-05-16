@@ -22,11 +22,11 @@ class Register extends Conexion implements CrudInterface
             $apellidoUser = $_POST["Apellidos"];
             $emailUser = $_POST["Email"];
             $phoneUser = $_POST["telefono"];
-            $passUser = $_POST["password"];
+            $securePassword = password_hash($passUser = $_POST["password"], PASSWORD_BCRYPT);
 
 
             $stmt = $this->conn->prepare("INSERT INTO usuarios(nombre,apellidos,email,tlf,contrasena) VALUES (?,?,?,?,?)");
-            $stmt->bind_param("sssis", $nombreUser, $apellidoUser, $emailUser, $phoneUser, password_hash($passUser, PASSWORD_BCRYPT));
+            $stmt->bind_param("sssis", $nombreUser, $apellidoUser, $emailUser, $phoneUser, $securePassword);
             $result = $stmt->execute();
             $stmt->close();
             return ($result);
