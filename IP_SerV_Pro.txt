@@ -1,5 +1,0 @@
-3.236.250.26
-
-PHPMYADMIN
-USER: root
-PASSWORD: tinckam1319
