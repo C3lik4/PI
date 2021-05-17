@@ -5,7 +5,7 @@ class Conexion
     private $userName;
     private $password;
     private $db;
-    private $configFile = "conf.csv";
+    private $configFile = __DIR__ . "/../conf.csv";
     protected $conn;
 
     public function __construct()

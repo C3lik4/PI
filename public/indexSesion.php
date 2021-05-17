@@ -1,3 +1,9 @@
+<?php
+require __DIR__ . './../src/Entity/autoloader.php';
+
+$security = new Security();
+$loginMessage = $security->doLogin();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,9 +19,9 @@
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.gstatic.com"> 
-  <link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet"> 
-  <link href = "preloader.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet">
+  <link href="preloader.css" rel="stylesheet">
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="preloader.js"></script>
@@ -27,7 +33,7 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark transparent_black fixed-top">
     <div class="container">
-      
+
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -48,8 +54,8 @@
           </li>
         </ul>
         <ul class="navbar-nav ml-auto">
-          <li class = "nav-item">
-            <a class= "nav-link effect-shine fuente_navbar" href="login.php">Iniciar sesión</a> 
+          <li class="nav-item">
+            <a class="nav-link effect-shine fuente_navbar">Bienvenido: <?= $security->getUserData(); ?></a>
           </li>
         </ul>
       </div>
@@ -63,11 +69,11 @@
 
       <div class="col-lg-3">
 
-        <div class = "shimmer">
-        <h1 class=" my-4 title"><span class = "titleWhite">L</span>egendary <span class = "titleWhite">M</span>otorsport</h1>
-       </div>
-        
-        <h2 class="my-3 fuente_navbar" >Filtrar</h2>
+        <div class="shimmer">
+          <h1 class=" my-4 title"><span class="titleWhite">L</span>egendary <span class="titleWhite">M</span>otorsport</h1>
+        </div>
+
+        <h2 class="my-3 fuente_navbar">Filtrar</h2>
         <div class="list-group bordes ">
           <a href="#" class="list-group-item more_transparent_black">0 - 500$</a>
           <a href="#" class="list-group-item more_transparent_black">500 - 10000$</a>
@@ -76,9 +82,9 @@
 
       </div>
 
-    
+
       <!-- /.col-lg-3 -->
-    
+
       <div class="col-lg-9">
 
         <div id="carouselExampleIndicators" class="carousel slide my-4 bordes " data-ride="carousel">
@@ -102,7 +108,7 @@
             <div class="carousel-item">
               <img class="d-block img-fluid" src="media/about-4.jpeg" alt="Third slide">
             </div>
-            
+
           </div>
           <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -115,11 +121,11 @@
         </div>
 
         <div class="col-lg-3">
-          
+
         </div>
 
         <div class="col">
-          <h1 class = "my-4 title effect-underline fuente_navbar">Anuncios Activos</h1>
+          <h1 class="my-4 title effect-underline fuente_navbar">Anuncios Activos</h1>
         </div>
 
         <div class="row">
@@ -127,8 +133,8 @@
             <div class="card h-100 lista bordes">
               <img class="card-img-top" src="anuncios/picasso.jpg" alt="">
               <div class="card-body">
-                
-                  <p class="items">Citroen Picasso</p>
+
+                <p class="items">Citroen Picasso</p>
                 <h5>2.200 €</h5>
                 <ul class="card-text descripcion_coche">
                   <li>*Alicante</li>
@@ -139,7 +145,7 @@
                 </ul>
               </div>
               <div class="card-footer center fuente_navbar">
-                <button class = "btn btn--radius-2 btn--red" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>
+                <button class="btn btn--radius-2 btn--red" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>
               </div>
             </div>
           </div>
@@ -148,8 +154,8 @@
             <div class="card h-100 lista bordes">
               <img class="card-img-top" src="anuncios/peugeot.jpg" alt="">
               <div class="card-body">
-                
-                  <p class="items">Peugeot 206</p>
+
+                <p class="items">Peugeot 206</p>
                 <h5>1.450 €</h5>
                 <ul class="card-text descripcion_coche">
                   <li>*Madrid</li>
@@ -160,7 +166,7 @@
                 </ul>
               </div>
               <div class="card-footer center fuente_navbar">
-                <button class = "btn btn--radius-2 btn--red" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>
+                <button class="btn btn--radius-2 btn--red" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>
               </div>
             </div>
           </div>
@@ -169,8 +175,8 @@
             <div class="card h-100 lista bordes">
               <img class="card-img-top" src="anuncios/astra.jpg" alt="">
               <div class="card-body">
-                
-                  <p class="items">Opel Astra</p>
+
+                <p class="items">Opel Astra</p>
                 <h5>2.490 €</h5>
                 <ul class="card-text descripcion_coche">
                   <li>*Madrid</li>
@@ -181,7 +187,7 @@
                 </ul>
               </div>
               <div class="card-footer center fuente_navbar">
-                <button class = "btn btn--radius-2 btn--red" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>
+                <button class="btn btn--radius-2 btn--red" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>
               </div>
             </div>
           </div>
@@ -192,8 +198,8 @@
             <div class="card h-100 lista bordes">
               <img class="card-img-top" src="anuncios/golf.jpg" alt="">
               <div class="card-body">
-                
-                  <p class="items">Volkswagen Golf R</p>
+
+                <p class="items">Volkswagen Golf R</p>
                 <h5>25.490 €</h5>
                 <ul class="card-text descripcion_coche">
                   <li>*Barcelona</li>
@@ -204,7 +210,7 @@
                 </ul>
               </div>
               <div class="card-footer center fuente_navbar">
-                <button class = "btn btn--radius-2 btn--red" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>
+                <button class="btn btn--radius-2 btn--red" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>
               </div>
             </div>
           </div>
@@ -213,8 +219,8 @@
             <div class="card h-100 lista bordes">
               <img class="card-img-top" src="anuncios/bmw.jpg" alt="">
               <div class="card-body">
-                
-                  <p class="items">BMW Serie 3 318d</p>
+
+                <p class="items">BMW Serie 3 318d</p>
                 <h5>21.300 €</h5>
                 <ul class="card-text descripcion_coche">
                   <li>*Albacete</li>
@@ -225,7 +231,7 @@
                 </ul>
               </div>
               <div class="card-footer center fuente_navbar">
-                <button class = "btn btn--radius-2 btn--red" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>
+                <button class="btn btn--radius-2 btn--red" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>
               </div>
             </div>
           </div>
@@ -234,8 +240,8 @@
             <div class="card h-100 lista bordes">
               <img class="card-img-top" src="anuncios/audi.jpg" alt="">
               <div class="card-body">
-                
-                  <p class="items">Audi A7 Sportback</p>
+
+                <p class="items">Audi A7 Sportback</p>
                 <h5>30.990 €</h5>
                 <ul class="card-text descripcion_coche">
                   <li>*Almería</li>
@@ -246,20 +252,20 @@
                 </ul>
               </div>
               <div class="card-footer center fuente_navbar">
-                <button class = "btn btn--radius-2 btn--red" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>
+                <button class="btn btn--radius-2 btn--red" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>
               </div>
             </div>
           </div>
         </div>
 
-          
+
         <div class="row">
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100 lista bordes">
               <img class="card-img-top" src="anuncios/porsche.jpg" alt="">
               <div class="card-body">
-                
-                  <p class="items">Porsche Panamera</p>
+
+                <p class="items">Porsche Panamera</p>
                 <h5>154.999 €</h5>
                 <ul class="card-text descripcion_coche">
                   <li>*Valencia</li>
@@ -270,7 +276,7 @@
                 </ul>
               </div>
               <div class="card-footer center fuente_navbar">
-                <button class = "btn btn--radius-2 btn--red" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>
+                <button class="btn btn--radius-2 btn--red" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>
               </div>
             </div>
 
@@ -279,8 +285,8 @@
             <div class="card h-100 lista bordes">
               <img class="card-img-top" src="anuncios/ferra.jpg" alt="">
               <div class="card-body">
-                
-                  <p class="items">Ferrari 488 Pista</p>
+
+                <p class="items">Ferrari 488 Pista</p>
                 <h5>389.999 €</h5>
                 <ul class="card-text descripcion_coche">
                   <li>*Valencia</li>
@@ -291,7 +297,7 @@
                 </ul>
               </div>
               <div class="card-footer center fuente_navbar">
-                <button class = "btn btn--radius-2 btn--red" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>
+                <button class="btn btn--radius-2 btn--red" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>
               </div>
             </div>
           </div>
@@ -300,8 +306,8 @@
             <div class="card h-100 lista bordes">
               <a href="" data-toggle="modal" data-target="#exampleModalCenter" data-toggle="modal" data-target="#exampleModalCenter"><img class="card-img-top" src="anuncios/lambo.jpg" alt=""></a>
               <div class="card-body">
-                
-                  <p class="items">Lamborghini Urus</p>
+
+                <p class="items">Lamborghini Urus</p>
                 <h5>319.999 €</h5>
                 <ul class="card-text descripcion_coche">
                   <li>*Valencia</li>
@@ -312,20 +318,20 @@
                 </ul>
               </div>
               <div class="card-footer center fuente_navbar">
-                <button class = "btn btn--radius-2 btn--red" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>
+                <button class="btn btn--radius-2 btn--red" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>
               </div>
             </div>
           </div>
         </div>
 
-          
+
         <div class="row">
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100 lista bordes">
               <a href="" data-toggle="modal" data-target="#exampleModalCenter" data-toggle="modal" data-target="#exampleModalCenter"><img class="card-img-top" src="anuncios/bugatti.jpg" alt=""></a>
               <div class="card-body">
-                
-                  <p class="items">Bugatti Chiron</p>
+
+                <p class="items">Bugatti Chiron</p>
                 <h5>2.413.793 €</h5>
                 <ul class="card-text descripcion_coche">
                   <li>*Baesweiler</li>
@@ -336,7 +342,7 @@
                 </ul>
               </div>
               <div class="card-footer center fuente_navbar">
-                <button class = "btn btn--radius-2 btn--red" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>
+                <button class="btn btn--radius-2 btn--red" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>
               </div>
             </div>
           </div>
@@ -345,8 +351,8 @@
             <div class="card h-100 lista bordes">
               <a href="" data-toggle="modal" data-target="#exampleModalCenter"><img class="card-img-top" src="anuncios/regera.jpg" alt=""></a>
               <div class="card-body">
-               
-                  <p class="items">Koenigsegg Regera</p>
+
+                <p class="items">Koenigsegg Regera</p>
                 <h5>3.193.000 €</h5>
                 <ul class="card-text descripcion_coche">
                   <li>*Baesweiler</li>
@@ -357,7 +363,7 @@
                 </ul>
               </div>
               <div class="card-footer center fuente_navbar">
-                <button class = "btn btn--radius-2 btn--red" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>
+                <button class="btn btn--radius-2 btn--red" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>
               </div>
             </div>
           </div>
@@ -366,8 +372,8 @@
             <div class="card h-100 lista bordes">
               <img class="card-img-top" src="anuncios/laferra.jpg" alt="">
               <div class="card-body">
-                
-                  <p class="items">Ferrari LaFerrari</p>               
+
+                <p class="items">Ferrari LaFerrari</p>
                 <h5>2.386.371 €</h5>
                 <ul class="card-text descripcion_coche">
                   <li>*Beverly Hills</li>
@@ -378,49 +384,49 @@
                 </ul>
               </div>
               <div class="card-footer center fuente_navbar">
-                <button class = "btn btn--radius-2 btn--red" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>
+                <button class="btn btn--radius-2 btn--red" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>
               </div>
             </div>
           </div>
         </div>
 
-        </div>
-        <!-- /.row -->
-
       </div>
-      <!-- /.col-lg-9 -->
+      <!-- /.row -->
 
     </div>
-    <!-- /.row -->
+    <!-- /.col-lg-9 -->
+
+  </div>
+  <!-- /.row -->
 
   </div>
   <!-- /.container -->
   <!-- Button trigger modal -->
 
-<!-- Modal -->
-<!-- Button trigger modal -->
+  <!-- Modal -->
+  <!-- Button trigger modal -->
 
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title center" id="exampleModalLongTitle">Confirmación de compra</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ¿Está seguro de que quiere realizar la compra?
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-small btn--no" data-dismiss="modal">No</button>
-        <button type="button" class="btn btn-small btn--green">Si</button>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title center" id="exampleModalLongTitle">Confirmación de compra</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ¿Está seguro de que quiere realizar la compra?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-small btn--no" data-dismiss="modal">No</button>
+          <button type="button" class="btn btn-small btn--green">Si</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
 
 
@@ -430,10 +436,10 @@
     <div class="container">
       <p class="m-0 text-center text-white">Copyright &copy; Legendary Motorsports 2021</p>
     </div>
-    
+
   </footer>
 
-  
+
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script>

@@ -1,8 +1,15 @@
+<?php
+require __DIR__ . './../src/Entity/autoloader.php';
+
+$security = new Security();
+$loginMessage = $security->doLogin();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Colorlib Templates">
@@ -18,18 +25,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Permanent+Marker&display=swap" rel="stylesheet">
-    
+
     <title>Legendary Motorsport</title>
 </head>
+
 <body>
     <div class="page-wrapper bg-gra-03 p-t-180 p-b-50">
         <div class="wrapper wrapper--w790">
             <div class="card card-5">
-                <div class="card-heading" >
-                    <h2 class="title"><span class = "titleWhite">L</span>egendary <span class = "titleWhite">M</span>otorsport</h2>
+                <div class="card-heading">
+                    <h2 class="title"><span class="titleWhite">L</span>egendary <span class="titleWhite">M</span>otorsport</h2>
+                    <h4 class="title"><?= $loginMessage ?></h4>
                 </div>
                 <div class="card-body">
-                    <form method="POST" action = "">
+                    <form method="POST" action="">
                         <div class="form-row">
                             <div class="name">Email</div>
                             <div class="value">
@@ -55,10 +64,10 @@
                             </div>
                         </div>
                         <div>
-                            <span class="p-l-50" ><button class="btn btn--radius-2 btn--red" type="submit">Login</button> 
-                        </div> 
+                            <span class="p-l-50"><button class="btn btn--radius-2 btn--red" type="submit">Login</button>
+                        </div>
                         <div class="p-t-100">
-                            <label class="label label--block">Si no dispone de cuenta regístrese<a class="enlaces" href="register.html"><span class ="color_enlace"> aquí</a></span></label>
+                            <label class="label label--block">Si no dispone de cuenta regístrese<a class="enlaces" href="register.html"><span class="color_enlace"> aquí</a></span></label>
                         </div>
                     </form>
                 </div>
@@ -71,7 +80,8 @@
     <script src="vendor/datepicker/daterangepicker.js"></script>
     <script src="js/global.js"></script>
     <script>
-        
-    </script>    
+
+    </script>
 </body>
+
 </html>
