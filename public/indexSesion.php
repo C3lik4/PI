@@ -304,7 +304,7 @@ $loginMessage = $security->doLogin();
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100 lista bordes">
-              <a href="" data-toggle="modal" data-target="#exampleModalCenter" data-toggle="modal" data-target="#exampleModalCenter"><img class="card-img-top" src="anuncios/lambo.jpg" alt=""></a>
+              <img class="card-img-top" src="anuncios/lambo.jpg" alt="">
               <div class="card-body">
 
                 <p class="items">Lamborghini Urus</p>
@@ -328,7 +328,7 @@ $loginMessage = $security->doLogin();
         <div class="row">
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100 lista bordes">
-              <a href="" data-toggle="modal" data-target="#exampleModalCenter" data-toggle="modal" data-target="#exampleModalCenter"><img class="card-img-top" src="anuncios/bugatti.jpg" alt=""></a>
+              <img class="card-img-top" src="anuncios/bugatti.jpg" alt="">
               <div class="card-body">
 
                 <p class="items">Bugatti Chiron</p>
@@ -349,7 +349,7 @@ $loginMessage = $security->doLogin();
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100 lista bordes">
-              <a href="" data-toggle="modal" data-target="#exampleModalCenter"><img class="card-img-top" src="anuncios/regera.jpg" alt=""></a>
+              <img class="card-img-top" src="anuncios/regera.jpg" alt="">
               <div class="card-body">
 
                 <p class="items">Koenigsegg Regera</p>
