@@ -65,7 +65,7 @@ CREATE TABLE `Anuncios` (
   `ano` year(4) NOT NULL,
   `precio` int(60) NOT NULL,
   `color` varchar(50) NOT NULL,
-  'foto' varchar(255),
+  `foto` varchar(255),
   PRIMARY KEY (`id_anuncio`),
   CONSTRAINT Fk_make_id_Anuncios FOREIGN KEY(`make_id`) REFERENCES make(`id`),
   CONSTRAINT Fk_model_id_Anuncios FOREIGN KEY(`model_id`) REFERENCES model(`id`)
