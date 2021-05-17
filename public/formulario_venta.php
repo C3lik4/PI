@@ -18,6 +18,7 @@ $seguridad->checkLoggedIn();
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg" href="./img/Grotti-GTAV-Logo_Editado.svg">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet">
   <script src="../public/js/formulario_venta.js"></script>
