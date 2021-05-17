@@ -35,7 +35,9 @@ $loginMessage = $security->doLogin();
             <div class="card card-5">
                 <div class="card-heading">
                     <h2 class="title"><span class="titleWhite">L</span>egendary <span class="titleWhite">M</span>otorsport</h2>
-                    <h4 class="title"><?= $loginMessage ?></h4>
+                    <div class = "error">
+                    <?= $loginMessage ?>
+                    </div>      
                 </div>
                 <div class="card-body">
                     <form method="POST" action="">

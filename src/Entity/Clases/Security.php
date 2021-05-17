@@ -24,7 +24,7 @@ class Security extends Conexion
             if ($_SESSION["loggedIn"]) {
                 header("Location: " . $this->homePage);
             } else {
-                return "Incorrect User Name or Password";
+                return "Nombre de usuario o contraseña incorrectos";
             }
         } else {
             return null;
@@ -57,7 +57,6 @@ class Security extends Conexion
     private function getUser($userName)
     {
         $sql = "SELECT * FROM usuarios WHERE email = '$userName'";
-        echo $sql;
         $result = $this->conn->query($sql);
         if ($result->num_rows > 0) {
             return $result->fetch_assoc();
