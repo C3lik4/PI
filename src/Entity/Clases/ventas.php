@@ -30,37 +30,18 @@ class ventas extends Conexion implements crudInterface{
             $fotos = $_FILES["fotos"]['name'];
             $directorio_fotos = $_FILES["fotos"]['tmp_name'];
 
+             move_uploaded_file($directorio_fotos , __DIR__.'/../../../public/anuncios/'. $fotos);
+
         }
 
-                    
-            if(isset($_POST['submit'])){
-            // Count total files
-            $countfiles = count($_FILES['fotos']['name']);
-            
-            // Looping all files
-            for($i=0;$i<$countfiles;$i++){
-            $fotos = $_FILES['file']['name'][$i];
-            
-            // Upload file
-            move_uploaded_file($_FILES['fotos']['tmp_name'][$i],__DIR__.'/../../../public/anuncios/'. $fotos);
-                
-            }
-        } 
-            
-
-            //move_uploaded_file($directorio_fotos , __DIR__.'/../../../public/anuncios/'. $fotos);
-            
-
-        
-
-            $stmt = $this->conn->prepare("INSERT INTO Anuncios (make_id,model_id,km,ano,precio,color,fotos) VALUES (?,?,?,?,?,?,?)");
-            $stmt->bind_param("iiissss", $marca, $modelo, $km, $ano, $precio, $color, $fotos);
+            $stmt = $this->conn->prepare("INSERT INTO anuncios (make_id,model_id,km,ano,precio,color,foto) VALUES (?,?,?,?,?,?,?)");
+            $stmt->bind_param("iiiisss", $marca, $modelo, $km, $ano, $precio, $color,$fotos);
             $result = $stmt->execute();
             $stmt->close();
             return ($result);
 
         
-        }
+        
 
 
 

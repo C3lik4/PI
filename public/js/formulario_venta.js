@@ -95,8 +95,9 @@ function main(){
         let formData = new FormData(formElement);
         const xhttp = new XMLHttpRequest();
         xhttp.addEventListener("readystatechange", function () {
-            if (xhttp.readyState == 4 && xhttp.status == 200) { }
+            if (xhttp.readyState == 4 && xhttp.status == 200){ 
             console.log(this.responseText);
+            }
         });
         xhttp.open("POST", "../src/Entity/enviaForm.php", true);
         xhttp.send(formData);
