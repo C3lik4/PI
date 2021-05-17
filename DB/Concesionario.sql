@@ -65,6 +65,7 @@ CREATE TABLE `Anuncios` (
   `ano` year(4) NOT NULL,
   `precio` int(60) NOT NULL,
   `color` varchar(50) NOT NULL,
+  `foto` varchar(255),
   PRIMARY KEY (`id_anuncio`),
   CONSTRAINT Fk_make_id_Anuncios FOREIGN KEY(`make_id`) REFERENCES make(`id`),
   CONSTRAINT Fk_model_id_Anuncios FOREIGN KEY(`model_id`) REFERENCES model(`id`)
@@ -82,9 +83,10 @@ CREATE TABLE `Usuarios` (
   `apellidos` varchar(60) NOT NULL,
   `email` varchar(100) NOT NULL,
   `tlf` int(60) NOT NULL,
-  `contrasena` varchar(100) NOT NULL,
   `dinero` int(11),
   `id_anuncio` int(11),
+  `userPassword` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
+  `securePassword` varchar(60) COLLATE utf8_spanish_ci NOT NULL,
   PRIMARY KEY (`id`),
   constraint Fk_id_anuncio foreign key( `id_anuncio`) references Anuncios( `id_anuncio`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

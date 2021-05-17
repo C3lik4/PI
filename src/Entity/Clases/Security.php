@@ -1,8 +1,8 @@
 <?php
 class Security extends Conexion
 {
-    private $loginPage = "../src/public/login.html";
-    private $homePage = "../src/main_page/index.html";
+    private $loginPage = "../public/login.php";
+    private $homePage = "../public/indexSesion.php";
     public function __construct()
     {
         parent::__construct();
@@ -20,11 +20,11 @@ class Security extends Conexion
     {
         if (count($_POST) > 0) {
             $user = $this->getUser($_POST["userName"]);
-            $_SESSION["loggedIn"] = $this->checkUser($user, $_POST["userPassword"]) ? $user["userName"] : false;
+            $_SESSION["loggedIn"] = $this->checkUser($user, $_POST["userPassword"]) ? $user["email"] : false;
             if ($_SESSION["loggedIn"]) {
                 header("Location: " . $this->homePage);
             } else {
-                return "Incorrect User Name or Password";
+                return "Nombre de usuario o contraseña incorrectos";
             }
         } else {
             return null;
@@ -56,7 +56,7 @@ class Security extends Conexion
 
     private function getUser($userName)
     {
-        $sql = "SELECT * FROM usuarios WHERE nombre = '$userName'";
+        $sql = "SELECT * FROM usuarios WHERE email = '$userName'";
         $result = $this->conn->query($sql);
         if ($result->num_rows > 0) {
             return $result->fetch_assoc();
