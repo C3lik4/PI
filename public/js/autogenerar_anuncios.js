@@ -72,7 +72,7 @@ function main(){
  
             let modelo = document.createElement("li");
             lista.appendChild(modelo);
-            modelo.className = "fila fuente_anuncios modelo";
+            modelo.className = "fila fuente_anuncios modelo ul";
             modelo.innerHTML = array_anuncios_json[x].modelo;
             
  
