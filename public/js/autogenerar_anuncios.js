@@ -25,14 +25,13 @@ function main(){
         
         let contenedor_anuncios = document.getElementById("contenedor");
 
-        for(let z = 0; z < array_anuncios_json.length; z = z+3){
+        for(let z = 3; z < array_anuncios_json.length; z = z+3){
     
-
-           
-        
            let fila_tarjeta = document.createElement("div");
            fila_tarjeta.className = "row";
            contenedor_anuncios.appendChild(fila_tarjeta);
+           
+        
 
            for(let x = 0; x < array_anuncios_json.length; x++){
     
@@ -105,6 +104,5 @@ function main(){
 
     }
 
-
-
 }
+
