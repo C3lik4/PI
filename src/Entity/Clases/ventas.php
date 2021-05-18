@@ -1,5 +1,7 @@
 <?php
 
+
+
 class ventas extends Conexion implements crudInterface{
 
     public function get(){
@@ -27,15 +29,18 @@ class ventas extends Conexion implements crudInterface{
             $km = $_POST["km"];
             $precio = $_POST["precio"];
 
-            $fotos = $_FILES["fotos"]['name'];
+            
+            $fotos = $_FILES ["fotos"]["name"];
+            $ext = explode(".",$fotos);
+            $nombre = time()."img".random_int(100 , 999).".".$ext[1];
             $directorio_fotos = $_FILES["fotos"]['tmp_name'];
 
-             move_uploaded_file($directorio_fotos , __DIR__.'/../../../public/anuncios/'. $fotos);
+             move_uploaded_file($directorio_fotos , __DIR__.'/../../../public/anuncios/'. $nombre);
 
         }
 
             $stmt = $this->conn->prepare("INSERT INTO anuncios (make_id,model_id,km,ano,precio,color,foto) VALUES (?,?,?,?,?,?,?)");
-            $stmt->bind_param("iiiisss", $marca, $modelo, $km, $ano, $precio, $color,$fotos);
+            $stmt->bind_param("iiiisss", $marca, $modelo, $km, $ano, $precio, $color,$nombre);
             $result = $stmt->execute();
             $stmt->close();
             return ($result);
@@ -48,6 +53,7 @@ class ventas extends Conexion implements crudInterface{
     }
 
 }
+
 
 
 
