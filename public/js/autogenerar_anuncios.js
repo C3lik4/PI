@@ -55,12 +55,13 @@ function main(){
             segundo_div.appendChild(div_cuerpo);
  
             let marca = document.createElement("p");
-            marca.className = "items";
+            marca.className = "items center";
             div_cuerpo.appendChild(marca);
-            marca.innerHTML = "";
+            marca.innerHTML = array_anuncios_json[x].Marca;
  
             let precio = document.createElement("h5");
             precio.innerHTML = array_anuncios_json[x].precio + " €";
+            precio.className = "center";
             div_cuerpo.appendChild(precio);
             
             
@@ -70,7 +71,7 @@ function main(){
  
             let modelo = document.createElement("li");
             lista.appendChild(modelo);
-            modelo.innerHTML = "";
+            modelo.innerHTML = array_anuncios_json[x].modelo;
             
  
             let color = document.createElement("li");
