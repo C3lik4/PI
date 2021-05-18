@@ -29,13 +29,14 @@ function main(){
     
 
            
-            console.log("retard");
+        
            let fila_tarjeta = document.createElement("div");
            fila_tarjeta.className = "row";
            contenedor_anuncios.appendChild(fila_tarjeta);
 
-           for (x in array_anuncios_json){
-               console.log("gilipollas");
+           for(let x = 0; x < array_anuncios_json.length; x++){
+    
+              
             let primer_div = document.createElement("div");
             primer_div.className="col-lg-4 col-md-6 mb-4";
             fila_tarjeta.appendChild(primer_div);
@@ -46,7 +47,7 @@ function main(){
  
             let imagen = document.createElement("img");
             imagen.className = "card-img-top";
-            //imagen.setAttribute("src","anuncios/array_anuncios_json[x].foto");
+            imagen.setAttribute("src","anuncios/array_anuncios_json[x].foto");
             segundo_div.appendChild(imagen);
             
  
@@ -95,6 +96,7 @@ function main(){
              boton.className = "btn btn--radius-2 btn--red";
              boton.setAttribute("data-toggle","modal")
              boton.setAttribute("data-target","#exampleModalCenter")
+             boton.innerHTML = "COMPRAR";
  
              footer.appendChild(boton);
            }
