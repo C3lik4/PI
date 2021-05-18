@@ -22,6 +22,10 @@ $loginMessage = $security->doLogin();
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet">
   <link href="preloader.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nova+Flat&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="../public/js/autogenerar_anuncios.js"></script>
@@ -93,7 +97,7 @@ $loginMessage = $security->doLogin();
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+           
           </ol>
           <div class="carousel-inner" role="listbox">
             <div class="carousel-item active">
@@ -125,7 +129,7 @@ $loginMessage = $security->doLogin();
         </div>
 
         <div class="col">
-          <h1 class="my-4 title effect-underline fuente_navbar">Anuncios Activos</h1>
+          <h1 class="my-4 title effect-underline fuente_navbar sombra">Anuncios Activos</h1>
         </div>
 
       </div>

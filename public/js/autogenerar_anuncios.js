@@ -45,8 +45,9 @@ function main(){
             primer_div.appendChild(segundo_div);
  
             let imagen = document.createElement("img");
+            let foto = array_anuncios_json[x].foto
             imagen.className = "card-img-top";
-            imagen.setAttribute("src","anuncios/array_anuncios_json[x].foto");
+            imagen.src = "./anuncios/" + foto;
             segundo_div.appendChild(imagen);
             
  
@@ -55,13 +56,13 @@ function main(){
             segundo_div.appendChild(div_cuerpo);
  
             let marca = document.createElement("p");
-            marca.className = "items center";
+            marca.className = "items center marca";
             div_cuerpo.appendChild(marca);
             marca.innerHTML = array_anuncios_json[x].Marca;
  
             let precio = document.createElement("h5");
             precio.innerHTML = array_anuncios_json[x].precio + " €";
-            precio.className = "center";
+            precio.className = "center precio span_sombras ";
             div_cuerpo.appendChild(precio);
             
             
@@ -71,20 +72,24 @@ function main(){
  
             let modelo = document.createElement("li");
             lista.appendChild(modelo);
+            modelo.className = "fila fuente_anuncios modelo";
             modelo.innerHTML = array_anuncios_json[x].modelo;
             
  
             let color = document.createElement("li");
+            color.className = "fila fuente_anuncios modelo";
             color.innerHTML = array_anuncios_json[x].color;
             lista.appendChild(color);
             
  
             let año = document.createElement("li");
+            año.className = "fila fuente_anuncios modelo";
             año.innerHTML = array_anuncios_json[x].ano;
             lista.appendChild(año);
             
  
             let km = document.createElement("li");
+            km.className = "fila fuente_anuncios modelo";
             km.innerHTML = array_anuncios_json[x].km +" Km" ;
             lista.appendChild(km);
             
