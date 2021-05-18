@@ -25,7 +25,7 @@ function main(){
         
         let contenedor_anuncios = document.getElementById("contenedor");
 
-        for(let z = 3; z < array_anuncios_json.length; z = z+3){
+        for(let z = 0; z < array_anuncios_json.length; z = z + 3){
     
            let fila_tarjeta = document.createElement("div");
            fila_tarjeta.className = "row";
@@ -33,7 +33,7 @@ function main(){
            
         
 
-           for(let x = 0; x < array_anuncios_json.length; x++){
+           for(let x = z; (x < z+3) && (x < array_anuncios_json.length) ; x++){
     
               
             let primer_div = document.createElement("div");
@@ -51,16 +51,16 @@ function main(){
             
  
             let div_cuerpo = document.createElement("div");
-            div_cuerpo.className = "card-body";
+            div_cuerpo.className = "card-body ";
             segundo_div.appendChild(div_cuerpo);
  
             let marca = document.createElement("p");
             marca.className = "items";
             div_cuerpo.appendChild(marca);
-            
+            marca.innerHTML = "";
  
             let precio = document.createElement("h5");
-            precio.innerHTML = array_anuncios_json[x].precio;
+            precio.innerHTML = array_anuncios_json[x].precio + " €";
             div_cuerpo.appendChild(precio);
             
             
@@ -70,6 +70,7 @@ function main(){
  
             let modelo = document.createElement("li");
             lista.appendChild(modelo);
+            modelo.innerHTML = "";
             
  
             let color = document.createElement("li");
@@ -83,7 +84,7 @@ function main(){
             
  
             let km = document.createElement("li");
-            km.innerHTML = array_anuncios_json[x].km;
+            km.innerHTML = array_anuncios_json[x].km +" Km" ;
             lista.appendChild(km);
             
  

@@ -156,7 +156,7 @@ $loginMessage = $security->doLogin();
           </button>
         </div>
         <div class="modal-body">
-          ¿Está seguro de que quiere realizar la compra?
+          ¿Está seguro de realizar la compra?
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-small btn--no" data-dismiss="modal">No</button>
