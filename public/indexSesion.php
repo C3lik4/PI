@@ -151,7 +151,7 @@ $loginMessage = $security->doLogin();
         </div>
 
         <div class="col">
-          <h1 class="my-4 title effect-underline fuente_navbar sombra">Anuncios Activos</h1>
+          <h1 class="my-4 title effect-underline fuente_navbar">Anuncios Activos</h1>
         </div>
 
       </div>
@@ -211,7 +211,7 @@ $loginMessage = $security->doLogin();
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="fa fa-user"></i></span>
                 </div>
-                <input type="number" class="form-control" name="cantidad" id="cantidad" required="">
+                <input type="number" class="form-control" name="cantidad" id="cantidad" required = "">
               </div> <!-- input-group.// -->
             </div> <!-- form-group.// -->
 
@@ -221,7 +221,7 @@ $loginMessage = $security->doLogin();
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="fa fa-credit-card"></i></span>
                 </div>
-                <input type="text" class="form-control" name="" placeholder="" maxlength="16">
+                <input type="text" class="form-control" maxlength = "16">
               </div> <!-- input-group.// -->
             </div> <!-- form-group.// -->
 
@@ -230,7 +230,7 @@ $loginMessage = $security->doLogin();
                 <div class="form-group">
                   <label><span class="hidden-xs">Fecha de expiración</span> </label>
                   <div class="form-inline">
-                    <select class="form-control" style="width:45%">
+                    <select class="form-control" style="width:45%" required>
                       <option>MM</option>
                       <option>01</option>
                       <option>02</option>
@@ -246,7 +246,7 @@ $loginMessage = $security->doLogin();
                       <option>12</option>
                     </select>
                     <span style="width:10%; text-align: center"> / </span>
-                    <select class="form-control" style="width:45%">
+                    <select class="form-control" style="width:45%" required>
                       <option>YY</option>
                       <option>2021</option>
                       <option>2022</option>
@@ -263,7 +263,7 @@ $loginMessage = $security->doLogin();
               <div class="col-sm-4">
                 <div class="form-group">
                   <label data-toggle="tooltip" title="" data-original-title="3 digits code on back side of the card">CVV <i class="fa fa-question-circle"></i></label>
-                  <input class="form-control" required="" type="text" maxlength="3">
+                  <input class="form-control" type="text" maxlength="3">
                 </div> <!-- form-group.// -->
               </div>
             </div> <!-- row.// -->

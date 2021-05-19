@@ -294,16 +294,20 @@ a.effect-shine:hover {
   font-family: 'Baloo 2', cursive;
   margin-left: 20%;
   
-}
-
-.euro{
-  color: #17f04d;
-  font-weight: bold;
+  
+  
 }
 
 .email{
   margin-left: 9%;
 }
+
+.Euro{
+  color: #17f04d;
+  font-weight: bold;
+  
+}
+
 
 
 

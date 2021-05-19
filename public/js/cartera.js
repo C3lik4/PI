@@ -29,12 +29,16 @@ function main() {
     function muestraCartera(dato) {
         let cartera = document.getElementById("monederoWallet");
         for (fila in dato) {
-            let span = document.createElement("span");
+           
             let spanEuro = document.createElement("span");
             spanEuro.innerHTML = "€";
-            spanEuro.className = "dinero euro";
+            spanEuro.className = "Euro";
+
+            let span = document.createElement("span");
             span.className = "blanco dinero";
-            span.innerHTML = dato[fila].dinero + spanEuro.innerHTML;
+            span.innerHTML = dato[fila].dinero;
+            span.appendChild(spanEuro);
+            
             cartera.appendChild(span);
         }
     }
