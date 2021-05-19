@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", main);
 
 function main() {
 
-
+    cargarCartera();
     document.getElementById("moneyForm").addEventListener("submit", function (e) {
 
         // INHABILITA EL RECARGAR LA PÁGINA AL ENVIAR EL FORMULARIO//
@@ -12,6 +12,32 @@ function main() {
         enviarForm(e.currentTarget);
         console.log("Has hecho click en enviar");
     });
+
+
+    function cargarCartera() {
+        const xhttp = new XMLHttpRequest();
+        xhttp.addEventListener("readystatechange", function () {
+            if (this.readyState == 4 && this.status == 200) {
+                console.log(this.responseText);
+                muestraCartera(JSON.parse(this.responseText));
+            }
+        });
+        xhttp.open("GET", "../src/Entity/showCartera.php", true);
+        xhttp.send();
+    }
+
+    function muestraCartera(dato) {
+        let cartera = document.getElementById("monederoWallet");
+        for (fila in dato) {
+            let span = document.createElement("span");
+            let spanEuro = document.createElement("span");
+            spanEuro.innerHTML = "€";
+            spanEuro.className = "dinero euro";
+            span.className = "blanco dinero";
+            span.innerHTML = dato[fila].dinero + spanEuro.innerHTML;
+            cartera.appendChild(span);
+        }
+    }
 
     function enviarForm(formElement) {
 
@@ -34,13 +60,8 @@ function main() {
             datosAnteriores[0].parentNode.removeChild(datosAnteriores[0]);
         }
     } */
-    const reloadtButton = document.querySelector("#reload");
-    // Reload everything:
-    function reload() {
-        reload = location.reload();
-    }
-    // Event listeners for reload
-    reloadButton.addEventListener("click", reload, false);
+
+
 
 
 

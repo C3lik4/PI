@@ -1,5 +1,5 @@
 <?php
-class Security extends Conexion implements ViewInterface,CrudInterface
+class Security extends Conexion implements ViewInterface, CrudInterface
 {
     private $loginPage = "../public/login.php";
     private $homePage = "../public/indexSesion.php";
@@ -11,6 +11,7 @@ class Security extends Conexion implements ViewInterface,CrudInterface
 
     public function checkLoggedIn()
     {
+        //session_start();
         if (!isset($_SESSION["loggedIn"]) || !$_SESSION["loggedIn"]) {
             header("Location: " . $this->loginPage);
         }
@@ -18,6 +19,8 @@ class Security extends Conexion implements ViewInterface,CrudInterface
 
     public function doLogin()
     {
+       // session_start();
+
         if (count($_POST) > 0) {
             $user = $this->getUser($_POST["userName"]);
             $_SESSION["loggedIn"] = $this->checkUser($user, $_POST["userPassword"]) ? $user["email"] : false;
@@ -33,6 +36,7 @@ class Security extends Conexion implements ViewInterface,CrudInterface
 
     public function getUserData()
     {
+
         if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"]) {
             return $_SESSION["loggedIn"];
         }
@@ -40,6 +44,7 @@ class Security extends Conexion implements ViewInterface,CrudInterface
 
     private function checkUser($user, $userPassword)
     {
+
         if ($user) {
             //return $this->checkPassword($user["userPassword"], $userPassword);
             return $this->checkPassword($user["securePassword"], $userPassword);
@@ -50,6 +55,7 @@ class Security extends Conexion implements ViewInterface,CrudInterface
 
     private function checkPassword($securePassword, $userPassword)
     {
+
         return password_verify($userPassword, $securePassword);
         //return ($userPassword === $securePassword);
     }
@@ -65,37 +71,34 @@ class Security extends Conexion implements ViewInterface,CrudInterface
         }
     }
 
-    public function get($id = null){
+    public function get($id = null)
+    {
         $email = $this->getUserData();
         $sql = "SELECT dinero FROM usuarios WHERE email = '$email'";
         $resultado = $this->conn->query($sql);
 
         return $resultado;
-
-
     }
 
-    public function update($values = null){
-
+    public function update($values = null)
+    {
     }
 
-    public function delete($id = null){
-
+    public function delete($id = null)
+    {
     }
 
-    public function add($values = null){
-
+    public function add($values = null)
+    {
     }
 
-    public function show($id = null){
+    public function show($id = null)
+    {
 
         $dinero = $this->get();
 
         $array_dinero = $dinero->fetch_all(MYSQLI_ASSOC);
 
         return $array_dinero;
-
     }
-
-
 }

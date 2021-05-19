@@ -59,7 +59,7 @@ $loginMessage = $security->doLogin();
         </ul>
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link  fuente_navbar blanco"><span class="blanco email"><?= $security->getUserData(); ?></span>
+            <a class="nav-link fuente_navbar blanco"><span class="blanco email"><?= $security->getUserData(); ?></span>
           </li>
 
           <div>
@@ -68,17 +68,17 @@ $loginMessage = $security->doLogin();
             </li>
           </div>
           <li>
-            <a class="nav-link  fuente_navbar blanco">
+            <a class="nav-link fuente_navbar blanco" id="monederoWallet">
 
               <?php
 
-              include_once("../src/Entity/autoloader.php");
+              /* include_once("../src/Entity/autoloader.php");
               $cartera1 = new cartera();
               $cartera = ($cartera1->show());
 
               foreach ($cartera as $data) {
                 echo "<span class='blanco dinero' id='spanDinero'>" . $data["dinero"] . "</span>" . "<span class='euro dinero'>€</span>";
-              }
+              } */
               ?>
             </a>
           </li>
