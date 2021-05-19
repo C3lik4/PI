@@ -50,7 +50,6 @@ function main(){
             imagen.src = "./anuncios/" + foto;
             segundo_div.appendChild(imagen);
             
- 
             let div_cuerpo = document.createElement("div");
             div_cuerpo.className = "card-body ";
             segundo_div.appendChild(div_cuerpo);

@@ -29,6 +29,7 @@ $loginMessage = $security->doLogin();
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="../public/js/autogenerar_anuncios.js"></script>
+  <script src="../public/js/cartera.js"></script>
   <title>Legendary Motorsport</title>
 </head>
 
@@ -59,8 +60,25 @@ $loginMessage = $security->doLogin();
         </ul>
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link effect-shine fuente_navbar" href = ""><?= $security->getUserData(); ?></a>
+            <a class="nav-link effect-shine fuente_navbar" href = ""><?= $security->getUserData(); ?> <?= 
+           
+             
+            include_once("../src/Entity/autoloader.php");
+            $cartera1 = new cartera();
+            $cartera = ($cartera1->show());
+
+            foreach ($cartera as $data){
+              echo $data["dinero"]."$";
+            }
+
+            
+            ?> </a>
           </li>
+          <div>
+          <li class = "nav-item">
+            <a class = "nav-brand" href = ""><img src = "../public/img/plus.png" class = "top"></img></a>
+          </li>
+        </div>
         </ul>
       </div>
     </div>

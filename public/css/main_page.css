@@ -262,9 +262,17 @@ a.effect-shine:hover {
   height: 40%;
 }
 
+.añadir{
+  width: 27px;
+  margin-top: 10px;
+}
 
-
-
+.top{
+  position: absolute;
+  top: 25%;
+  width:27px; 
+  height : 27px;
+}
 
 
 

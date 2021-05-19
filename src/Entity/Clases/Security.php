@@ -1,5 +1,5 @@
 <?php
-class Security extends Conexion
+class Security extends Conexion implements ViewInterface,CrudInterface
 {
     private $loginPage = "../public/login.php";
     private $homePage = "../public/indexSesion.php";
@@ -64,4 +64,38 @@ class Security extends Conexion
             return false;
         }
     }
+
+    public function get($id = null){
+        $email = $this->getUserData();
+        $sql = "SELECT dinero FROM usuarios WHERE email = '$email'";
+        $resultado = $this->conn->query($sql);
+
+        return $resultado;
+
+
+    }
+
+    public function update($values = null){
+
+    }
+
+    public function delete($id = null){
+
+    }
+
+    public function add($values = null){
+
+    }
+
+    public function show($id = null){
+
+        $dinero = $this->get();
+
+        $array_dinero = $dinero->fetch_all(MYSQLI_ASSOC);
+
+        return $array_dinero;
+
+    }
+
+
 }
