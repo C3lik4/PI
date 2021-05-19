@@ -1,47 +1,46 @@
 <?php
 
-class cartera extends Conexion implements ViewInterface,CrudInterface{
+class cartera extends Conexion implements ViewInterface, CrudInterface
+{
 
-    public function get($id = null){
+
+    public function get($id = null)
+    {
         $email = $_SESSION["loggedIn"];
         $sql = "SELECT dinero FROM usuarios WHERE email = '$email'";
         $resultado = $this->conn->query($sql);
 
         return $resultado;
-
-
     }
 
-    public function update($values = null){
-        
-            $email = $_SESSION["loggedIn"];
-            $cantidad = $_POST["cantidad"];
+    public function update($values = null)
+    {
+        session_start();
 
-            $stmt = $this->conn->prepare("UPDATE usuarios SET dinero = ( dinero + ? ) WHERE email = '$email'");
-            $stmt->bind_param("i", $cantidad);
-            $result = $stmt->execute();
-            $stmt->close();
-            return ($result);
-        }
-    
+        $correo = $_SESSION["loggedIn"];
+        $cantidad = $_POST["cantidad"];
 
-    public function delete($id = null){
-
+        $stmt = $this->conn->prepare("UPDATE usuarios SET dinero = ( dinero + ? ) WHERE email = '$correo'");
+        $stmt->bind_param("i", $cantidad);
+        $result = $stmt->execute();
+        $stmt->close();
+        return ($result);
     }
 
-    public function add($values = null){
 
+    public function delete($id = null)
+    {
     }
 
-    public function show($id = null){
+    public function add($values = null)
+    {
+    }
+
+    public function show($id = null)
+    {
 
         $dinero = $this->get();
 
         return $dinero;
-
     }
-
-
-
-
 }
