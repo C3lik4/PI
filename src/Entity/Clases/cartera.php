@@ -14,6 +14,16 @@ class cartera extends Conexion implements ViewInterface,CrudInterface{
 
     public function update($values = null){
 
+        $dinero = $_POST["dinero"];
+        $email = $_SESSION["loggedIn"];
+
+
+        $stmt = $this->conn->prepare("UPDATE usuarios SET dinero = ? WHERE email = $email");
+        $stmt->bind_param("i",$dinero);
+        $result = $stmt->execute();
+        $stmt->close();
+        return ($result);
+
     }
 
     public function delete($id = null){
@@ -36,7 +46,3 @@ class cartera extends Conexion implements ViewInterface,CrudInterface{
 
 
 }
-
-
-
-?>
