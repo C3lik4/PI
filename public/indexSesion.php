@@ -60,8 +60,7 @@ $loginMessage = $security->doLogin();
         </ul>
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link effect-shine fuente_navbar" href = ""><?= $security->getUserData(); ?> <?= 
-           
+            <a class="nav-link effect-shine fuente_navbar" href = ""><?= $security->getUserData(); ?> <?php           
              
             include_once("../src/Entity/autoloader.php");
             $cartera1 = new cartera();
