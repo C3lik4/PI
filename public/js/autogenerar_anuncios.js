@@ -61,6 +61,7 @@ function main(){
  
             let precio = document.createElement("h5");
             precio.innerHTML = array_anuncios_json[x].precio + " €";
+            precio.value = array_anuncios_json[x].precio;
             precio.className = "center precio span_sombras ";
             div_cuerpo.appendChild(precio);
             

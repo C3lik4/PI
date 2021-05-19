@@ -2,27 +2,34 @@ document.addEventListener("DOMContentLoaded",main);
 
 function main(){
 
-    cargarDinero();
+    
 
-    function cargarDinero(){
+    document.getElementById("dinero").addEventListener("submit", function (e) {
+
+        // INHABILITA EL RECARGAR LA PÁGINA AL ENVIAR EL FORMULARIO//
+        e.preventDefault();
+
+        // LLAMAMOS A LA FUNCION ENVIARFORM PASANDOLE EL ELEMENTO ACTUAL //
+        enviarForm(e.currentTarget);
+        console.log("Has hecho click en enviar");
+    });
+
+    function enviarForm(formElement) {
+
+        // CREAMOS UN OBJETO FORMDATA (FORMATO XMLHttpRequest)//
+        let formData = new FormData(formElement);
         const xhttp = new XMLHttpRequest();
-        xhttp.addEventListener("readystatechange", function(){
-            if(this.readyState == 4 && this.status == 200){
-
-                rellenador_cartera(JSON.parse(this.responseText));
+        xhttp.addEventListener("readystatechange", function () {
+            if (xhttp.readyState == 4 && xhttp.status == 200){ 
+            console.log(this.responseText);
             }
         });
-
-        xhttp.open("GET","../src/Entity/showDinero.php", true);
-        xhttp.send();
-
+        xhttp.open("POST", "../src/Entity/updateCartera.php", true);
+        xhttp.send(formData);
     }
 
-    function rellenador_cartera(){
 
-        
-
-    }
+    
 
 
 

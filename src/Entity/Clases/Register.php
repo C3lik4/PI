@@ -26,8 +26,8 @@ class Register extends Conexion implements CrudInterface
             $securePassword = password_hash($userPassword, PASSWORD_BCRYPT);
 
 
-            $stmt = $this->conn->prepare("INSERT INTO usuarios(nombre,apellidos,email,tlf,userPassword,securePassword) VALUES (?,?,?,?,?,?)");
-            $stmt->bind_param("sssiss", $nombreUser, $apellidoUser, $emailUser, $phoneUser, $userPassword, $securePassword);
+            $stmt = $this->conn->prepare("INSERT INTO usuarios(nombre,apellidos,email,tlf,securePassword) VALUES (?,?,?,?,?)");
+            $stmt->bind_param("sssis", $nombreUser, $apellidoUser, $emailUser, $phoneUser, $securePassword);
             $result = $stmt->execute();
             $stmt->close();
             return ($result);

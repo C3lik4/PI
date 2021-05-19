@@ -21,7 +21,6 @@ $loginMessage = $security->doLogin();
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet">
-  <link href="preloader.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Nova+Flat&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -60,24 +59,30 @@ $loginMessage = $security->doLogin();
         </ul>
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link effect-shine fuente_navbar" href = ""><?= $security->getUserData(); ?> <?php           
+            <a class="nav-link  fuente_navbar blanco"><span class = "blanco email"><?= $security->getUserData(); ?></span> 
+          </li>
+
+          <div>
+          <li class = "nav-item">
+            <a class = "nav-brand" data-toggle="modal" href="#money_modal" ><img src = "../public/img/plus.png" class = "top"></img></a>
+          </li>
+        </div>
+          <li>
+          <a class="nav-link  fuente_navbar blanco">
+          
+          <?php           
              
             include_once("../src/Entity/autoloader.php");
             $cartera1 = new cartera();
             $cartera = ($cartera1->show());
 
             foreach ($cartera as $data){
-              echo $data["dinero"]."$";
+              echo "<span class='blanco dinero'>".$data["dinero"]."</span>"."<span class='euro dinero'>€</span>";
             }
-
-            
-            ?> </a>
+            ?>
+          </a>
           </li>
-          <div>
-          <li class = "nav-item">
-            <a class = "nav-brand" href = ""><img src = "../public/img/plus.png" class = "top"></img></a>
-          </li>
-        </div>
+          
         </ul>
       </div>
     </div>
@@ -167,26 +172,112 @@ $loginMessage = $security->doLogin();
 
 
   <!-- Modal -->
-  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title center" id="exampleModalLongTitle">Confirmación de compra</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          ¿Está seguro de realizar la compra?
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-small btn--no" data-dismiss="modal">No</button>
-          <button type="button" class="btn btn-small btn--green">Si</button>
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title center" id="exampleModalLongTitle">Confirmación de compra</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              ¿Está seguro de realizar la compra?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-small btn--no" data-dismiss="modal">No</button>
+              <button type="button" class="btn btn-small btn--green">Si</button>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
 
+
+
+      <div class="modal fade" id="money_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header ">
+            <h5 class="modal-title modal_precios" id="exampleModalCenterTitle">Depositar</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+                  <form method = "post" id = "dinero">
+                    <div class="form-group">
+                    <label for="username">Cantidad a depositar</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-user"></i></span>
+                      </div>
+                      <input type = "number" class="form-control" name="cantidad" id="cantidad"  required="">
+                    </div> <!-- input-group.// -->
+                    </div> <!-- form-group.// -->
+
+                    <div class="form-group">
+                    <label for="cardNumber">Número de tarjeta</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-credit-card"></i></span>
+                      </div>
+                      <input type="text" class="form-control" name="" placeholder="" maxlength="16">
+                    </div> <!-- input-group.// -->
+                    </div> <!-- form-group.// -->
+
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <div class="form-group">
+                                <label><span class="hidden-xs">Fecha de expiración</span> </label>
+                              <div class="form-inline">
+                                <select class="form-control" style="width:45%">
+                              <option>MM</option>
+                              <option>01</option>
+                              <option>02</option>
+                              <option>03</option>
+                              <option>04</option>
+                              <option>05</option>
+                              <option>06</option>
+                              <option>07</option>
+                              <option>08</option>
+                              <option>09</option>
+                              <option>10</option>
+                              <option>11</option>
+                              <option>12</option>
+                            </select>
+                                  <span style="width:10%; text-align: center"> / </span>
+                                  <select class="form-control" style="width:45%">
+                              <option>YY</option>
+                              <option>2021</option>
+                              <option>2022</option>
+                              <option>2023</option>
+                              <option>2024</option>
+                              <option>2025</option>
+                              <option>2026</option>
+                              <option>2027</option>
+                              <option>2028</option>
+                            </select>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label data-toggle="tooltip" title="" data-original-title="3 digits code on back side of the card">CVV <i class="fa fa-question-circle"></i></label>
+                                <input class="form-control" required="" type="text" maxlength = "3">
+                            </div> <!-- form-group.// -->
+                        </div>
+                    </div> <!-- row.// -->
+                    
+                
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn--red--nohover " data-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-primary" id="boton_pago">Pagar</button>
+          </div>
+          </form>
+        </div>
+      </div>  
+    </div>
 
 
 
@@ -204,7 +295,6 @@ $loginMessage = $security->doLogin();
   <script>
 
   </script>
-
 </body>
 
 </html>

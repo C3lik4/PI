@@ -182,6 +182,9 @@ a.effect-shine:hover {
   background: #ff4b5a;
 }
 
+.btn--red--nohover{
+  background: #ff4b5a;
+}
 
 
 .btn--red:hover{
@@ -214,6 +217,14 @@ a.effect-shine:hover {
   font-family: 'Baloo 2', cursive;
   font-weight: bold;
 }
+
+.modal_precios{
+  font-family: 'Baloo 2', cursive;
+  font-weight: bold;
+  text-align: center;
+  justify-content: center;
+}
+
 
 .sombra{
   text-shadow: 0 0 3px #ffffff, 0 0 5px #00a2ff;
@@ -272,10 +283,27 @@ a.effect-shine:hover {
   top: 25%;
   width:27px; 
   height : 27px;
+  
 }
 
+.blanco{
+  color:white;
+}
 
+.dinero{
+  font-family: 'Baloo 2', cursive;
+  margin-left: 20%;
+  
+}
 
+.euro{
+  color: #17f04d;
+  font-weight: bold;
+}
+
+.email{
+  margin-left: 9%;
+}
 
 
 
