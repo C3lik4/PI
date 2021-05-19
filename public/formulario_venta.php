@@ -83,17 +83,17 @@ $seguridad->checkLoggedIn();
 
     <div class=" container col-lg-7 center margen_pequeno">
       <div class="form row center2 down titleWhite fuente_navbar effect-underline bold">Formulario de Venta</div>
-      <form>
+      <form method="post" id="formulario_venta">
         <div class="form-row">
           <div class="form-group col-md-6">
             <label class="label">Marca</label>
-            <select id="marca" class="form-control">
+            <select id="marca" name="marca" class="form-control">
 
             </select>
           </div>
           <div class="form-group col-md-6">
             <label class="label">Modelo</label>
-            <select id="modelo" class="form-control">
+            <select id="modelo" name="modelo" class="form-control">
               <option selected></option>
             </select>
           </div>
@@ -101,7 +101,7 @@ $seguridad->checkLoggedIn();
         <div class="form-row center2">
           <div class="form-group col-md-3">
             <label class="label">Color</label>
-            <select id="color" class="form-control">
+            <select id="color" name="color" class="form-control">
               <option>Blanco</option>
               <option>Negro</option>
               <option>Rojo</option>
@@ -119,26 +119,25 @@ $seguridad->checkLoggedIn();
           </div>
           <div class="form-group col-md-3">
             <label class="label">Km</label>
-            <input type="number" class="form-control" id="km" placeholder="Km">
+            <input type="number" name="km" class="form-control" id="km" placeholder="Km">
           </div>
           <div class="form-group col-md-3">
             <label class="label">Año</label>
-            <input type="number" class="form-control" id="año" maxlength="4">
+            <input type="text" name="ano" class="form-control" maxlength="4" id="ano">
           </div>
 
           <div class="form-group col-md-3">
             <label class="label">Precio</label>
-            <input type="number" class="form-control" id="precio" placeholder="€">
+            <input type="number" name="precio" class="form-control" id="precio" placeholder="€">
           </div>
         </div>
         <div class="form-row center">
           <div class="form-group col">
             <label class="label">Fotos</label>
-            <input type="file" class="form-control" id="fotos" multiple="multiple">
+            <input type="file" name="fotos" class="form-control" id="fotos" multiple="multiple">
           </div>
         </div>
-      </form>
-      <button type="submit" class="btn btn--red margen_pequeno">Enviar</button>
+        <button type="submit" class="btn btn--red margen_pequeno">Enviar</button>
       </form>
     </div>
   </div>
