@@ -59,7 +59,7 @@ $loginMessage = $security->doLogin();
         </ul>
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link effect-shine fuente_navbar">Bienvenido: <?= $security->getUserData(); ?></a>
+            <a class="nav-link effect-shine fuente_navbar" href = ""><?= $security->getUserData(); ?></a>
           </li>
         </ul>
       </div>
