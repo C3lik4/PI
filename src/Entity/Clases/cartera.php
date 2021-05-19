@@ -45,7 +45,3 @@ class cartera extends Conexion implements ViewInterface,CrudInterface{
 
 
 }
-
-
-
-?>
