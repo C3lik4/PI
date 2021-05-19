@@ -257,8 +257,10 @@ a.effect-shine:hover {
 }
 
 
-
-
+.card-img-top{
+  width: 40%;
+  height: 40%;
+}
 
 
 
