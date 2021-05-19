@@ -196,19 +196,71 @@ a.effect-shine:hover {
   background: #ff4b5a;
 }
 
+.fila{
+  margin-left: 5%;
+}
+
+.marca{
+  font-size: 20px;
+  font-family: 'Nova Flat', cursive;
+  font-weight:bold;
+}
+
+.fuente_anuncios{
+  font-family: 'Baloo 2', cursive;
+}
+
+.precio{
+  font-family: 'Baloo 2', cursive;
+  font-weight: bold;
+}
+
+.sombra{
+  text-shadow: 0 0 3px #ffffff, 0 0 5px #00a2ff;
+  
+}
+
+.span_sombras{
+  box-shadow:
+    8px 8px 10px 0px rgba(85, 139, 255, 0.075), 
+    -5px -5px 5px 0px rgba(0, 217, 255, 0.644), 
+    5px 5px 15px 0px rgba(0, 238, 255, 0.247);
+    padding: 0em 1em;
+    border-radius: 16px;
+}
+
+.subrallado:after {
+	content: '';
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  height: 1em;
+  width: 100%;
+  border-bottom: 1px solid;
+  margin-top: 10px;
+
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+	
+  opacity: 1;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+}
+
+.modelo{
+  font-weight: bold;
+}
 
 
+.ul{
+  padding-top: 5%;
+}
 
 
-
-
-
-
-
-
-
-
-
+.card-img-top{
+  width: 40%;
+  height: 40%;
+}
 
 
 

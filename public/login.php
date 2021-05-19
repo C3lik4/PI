@@ -21,6 +21,7 @@ $loginMessage = $security->doLogin();
     <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
     <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
     <link href="css/login.css" rel="stylesheet" media="all">
+    <script src="../public/js/autogenerar_anuncios.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
