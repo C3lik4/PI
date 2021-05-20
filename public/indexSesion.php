@@ -25,6 +25,7 @@ $loginMessage = $security->doLogin();
   <link href="https://fonts.googleapis.com/css2?family=Nova+Flat&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg" href="./img/logo.svg">
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="../public/js/autogenerar_anuncios.js"></script>
@@ -54,32 +55,23 @@ $loginMessage = $security->doLogin();
             <a class="nav-link effect-shine fuente_navbar" href="formulario_venta.php">Vende tu coche</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link effect-shine fuente_navbar" href="#">Contáctanos</a>
+            <a class="nav-link effect-shine fuente_navbar" data-toggle = "modal" href="#modal_contacto">Contáctanos</a>
           </li>
         </ul>
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav ml-auto email">
           <li class="nav-item">
             <a class="nav-link fuente_navbar blanco"><span class="blanco email"><?= $security->getUserData(); ?></span>
           </li>
 
           <div>
             <li class="nav-item">
-              <a class="nav-brand" data-toggle="modal" href="#money_modal"><img src="../public/img/plus.png" class="top"></img></a>
+              <a class="nav-brand icon" data-toggle="modal" href="#money_modal"><img src="../public/img/plus.png" class="top"></img></a>
             </li>
           </div>
           <li>
-            <a class="nav-link fuente_navbar blanco" id="monederoWallet">
+            <a class="nav-link fuente_navbar blanco money" id="monederoWallet">
 
-              <?php
-
-              /* include_once("../src/Entity/autoloader.php");
-              $cartera1 = new cartera();
-              $cartera = ($cartera1->show());
-
-              foreach ($cartera as $data) {
-                echo "<span class='blanco dinero' id='spanDinero'>" . $data["dinero"] . "</span>" . "<span class='euro dinero'>€</span>";
-              } */
-              ?>
+      
             </a>
           </li>
 
@@ -171,7 +163,7 @@ $loginMessage = $security->doLogin();
   <!-- Button trigger modal -->
 
 
-  <!-- Modal -->
+  <!-- Modal confirmacion compra -->
   <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
@@ -193,7 +185,7 @@ $loginMessage = $security->doLogin();
   </div>
 
 
-
+<!-- Modal recarga dinero -->
   <div class="modal fade" id="money_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
@@ -278,6 +270,46 @@ $loginMessage = $security->doLogin();
       </div>
     </div>
   </div>
+
+
+
+
+  <!-- Modal contacto -->
+            <div class="modal fade" id="modal_contacto" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-body">
+                  
+                
+                <div class="modal-header">
+                  <h5 class="modal-title modal_precios"> Contáctanos</h5><img src = "../public/img/logo.svg" class = "icono"></img>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" aria-describedby="emailHelp" >
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp"  required>
+                            <small id="emailHelp" class="form-text text-muted">Nunca compartiremos tu email , tus mensajes son privados.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje</label>
+                            <textarea class="form-control" id="message" rows="6" required></textarea>
+                        </div>
+                        <div class="mx-auto">
+                        <button type="submit" class="btn btn-primary text-right">Enviar</button></div>
+                    </form>
+                      </div>
+                      
+                  </div>
+              </div>
+          </div>
+     
+                  
+                   
 
 
 

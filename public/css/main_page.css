@@ -308,6 +308,46 @@ a.effect-shine:hover {
   
 }
 
+@media (max-width: 1200px) {
+  .email {
+    position: absolute;
+    top: 23%;
+    left:30%;
+    width:27px; 
+    height : 27px;
+  
+  }
+}
+
+@media (max-width:1200px) {
+  .icon {
+    position: absolute;
+    top: -9%;
+    left: 800%;
+    width: 27px;
+    height: 27px;
+  
+  }
+}
+
+@media (max-width: 1200px) {
+  .money {
+    position: absolute;
+    top: 70%;
+    left:350%;
+    width:27px; 
+    height : 27px;
+  
+  }
+}
+
+.icono {
+  position: absolute;
+  left:30%;
+  top: 6%;
+  width: 30px;
+  height: 30px;
+}
 
 
 
