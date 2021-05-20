@@ -23,7 +23,62 @@ function main(){
 
     function rellenador_anuncios(array_anuncios_json){
         
+        let modal = document.createElement("div");
+        modal.className = "modal fade";
+        modal.id = "exampleModalCenter";
+        modal.setAttribute("tabindex","-1");
+        modal.setAttribute("role","dialog");
+        modal.setAttribute("aria-labelledby","exampleModalCenterTitle");
+        modal.setAttribute("aria-hidden","true");
+
+        let modal_dialog = document.createElement("div");
+        modal_dialog.className = "modal-dialog modal-dialog-centered";
+        modal_dialog.setAttribute("role","document");
+
+        let modal_content = document.createElement("div");
+        modal_content.className = "modal-content";
+
+        let modal_header = document.createElement("div");
+        modal_header.className = "modal-header";
+
+        let h5 = document.createElement("h5");
+        h5.className = "modal-title center";
+        h5.id = "exampleModalLongTitle";
+        h5.innerHTML = "Confirmación de compra";
+
+        let boton_cerrar = document.createElement("button");
+        boton_cerrar.className = "close";
+        boton_cerrar.setAttribute("type","button");
+        boton_cerrar.setAttribute("data-dismiss","modal");
+        boton_cerrar.setAttribute("aria-label","Close");
+
+        let span_boton = document.createElement("span");
+        span_boton.setAttribute("aria-hidden","true");
+        span_boton.innerHTML =  "&times";
+
+        let body = document.createElement("div");
+        body.className = "modal-body";
+        body.innerHTML = "¿Está seguro de realizar la compra?";
+
+
+        let footer = document.createElement("div");
+        footer.className = "modal-footer";
+
+        let boton_no = document.createElement("button");
+        boton_no.className = "btn btn-small btn--no";
+        boton_no.setAttribute("type","button");
+        boton_no.setAttribute("data-dismiss","modal");
+
+        let boton_si = document.createElement("button");
+        boton_si.className = "btn btn-small btn--green";
+        boton_si.setAttribute("type","button");
+
+
+
+
+
         let contenedor_anuncios = document.getElementById("contenedor");
+
 
         for(let z = 0; z < array_anuncios_json.length; z = z + 3){
     
