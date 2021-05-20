@@ -4,6 +4,13 @@
 
 class ventas extends Conexion implements crudInterface{
 
+    public function __construct(){
+
+        parent::__construct();
+        session_start();
+
+    }
+
     public function get(){
 
     }

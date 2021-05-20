@@ -60,7 +60,7 @@ $loginMessage = $security->doLogin();
                     </ul>
                     <ul class="navbar-nav ml-auto email">
                       <li class="nav-item">
-                        <a class="nav-link fuente_navbar blanco"><span class="blanco email"><?= $security->getUserData(); ?></span>
+                        <a class="nav-link fuente_navbar blanco"><span class="blanco email" id = "dinerito"><?= $security->getUserData(); ?></span>
                       </li>
 
                       <div>

@@ -41,6 +41,11 @@ h2{
   font-family: 'Play', sans-serif;
 }
 
+.centro{
+  justify-content:center;
+  text-align:center;
+}
+
 .hover{
   text-decoration: none;
   color:white;

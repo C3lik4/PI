@@ -3,6 +3,7 @@ require __DIR__ . './../src/Entity/autoloader.php';
 
 $security = new Security();
 $loginMessage = $security->doLogin();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -95,7 +96,7 @@ $loginMessage = $security->doLogin();
 
 
     <div class=" container col-lg-7 center margen_pequeno">
-      <div class="form row center2 down titleWhite fuente_navbar effect-underline bold">Formulario de Venta</div>
+      <div class="form row centro down titleWhite fuente_navbar effect-underline bold">Formulario de Venta</div>
       <form method="post" id="formulario_venta">
         <div class="form-row">
           <div class="form-group col-md-6">
