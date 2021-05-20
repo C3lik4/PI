@@ -23,6 +23,8 @@ function main(){
 
     function rellenador_anuncios(array_anuncios_json){
         
+        let cos = document.getElementById("cos");
+
         let modal = document.createElement("div");
         modal.className = "modal fade";
         modal.id = "exampleModalCenter";
@@ -30,49 +32,61 @@ function main(){
         modal.setAttribute("role","dialog");
         modal.setAttribute("aria-labelledby","exampleModalCenterTitle");
         modal.setAttribute("aria-hidden","true");
+        cos.appendChild(modal);
 
         let modal_dialog = document.createElement("div");
         modal_dialog.className = "modal-dialog modal-dialog-centered";
         modal_dialog.setAttribute("role","document");
+        modal.appendChild(modal_dialog);
 
         let modal_content = document.createElement("div");
         modal_content.className = "modal-content";
+        modal_dialog.appendChild(modal_content);
 
         let modal_header = document.createElement("div");
         modal_header.className = "modal-header";
+        modal_content.appendChild(modal_header);
 
         let h5 = document.createElement("h5");
-        h5.className = "modal-title center";
+        h5.className = "modal-title center modal_precios";
         h5.id = "exampleModalLongTitle";
         h5.innerHTML = "Confirmación de compra";
+        modal_header.appendChild(h5);
 
         let boton_cerrar = document.createElement("button");
         boton_cerrar.className = "close";
         boton_cerrar.setAttribute("type","button");
         boton_cerrar.setAttribute("data-dismiss","modal");
         boton_cerrar.setAttribute("aria-label","Close");
+        modal_header.appendChild(boton_cerrar);
 
         let span_boton = document.createElement("span");
         span_boton.setAttribute("aria-hidden","true");
         span_boton.innerHTML =  "&times";
+        modal_header.appendChild(span_boton);
 
         let body = document.createElement("div");
         body.className = "modal-body";
         body.innerHTML = "¿Está seguro de realizar la compra?";
+        modal_content.appendChild(body);
 
 
         let footer = document.createElement("div");
         footer.className = "modal-footer";
+        modal_content.appendChild(footer)
 
         let boton_no = document.createElement("button");
         boton_no.className = "btn btn-small btn--no";
         boton_no.setAttribute("type","button");
         boton_no.setAttribute("data-dismiss","modal");
+        boton_no.innerHTML = "NO"
+        footer.appendChild(boton_no);
 
         let boton_si = document.createElement("button");
         boton_si.className = "btn btn-small btn--green";
         boton_si.setAttribute("type","button");
-
+        boton_si.innerHTML = "SI"
+        footer.appendChild( boton_si );
 
 
 

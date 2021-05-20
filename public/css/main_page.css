@@ -293,9 +293,10 @@ a.effect-shine:hover {
 .dinero{
   font-family: 'Baloo 2', cursive;
   margin-left: 25%;
-  
-  
-  
+}
+
+.letra{
+  font-family: 'Baloo 2', cursive;
 }
 
 .email{
@@ -344,10 +345,57 @@ a.effect-shine:hover {
 .icono {
   position: absolute;
   left:30%;
-  top: 6%;
+  top: 3%;
   width: 30px;
   height: 30px;
 }
+
+
+
+
+.margen{
+  margin-top:200px;;
+}
+
+.margen_pequeno{
+  margin-top:76px;
+}
+
+.label{
+  font-family: 'Play', sans-serif;
+  color:white;
+}
+
+.down{
+  margin-bottom: 5%;
+}
+
+.bold{
+  font-weight: bold;
+  font-size:30px
+}
+
+/* alineacion de placeholders */
+input[type="number"]::placeholder { 
+                  
+  /* Firefox, Chrome, Opera */
+  text-align: right;
+}
+
+/*Para quitar las flechitas que se asignan al poner input type="number"*/
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 
 
 

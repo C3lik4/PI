@@ -33,7 +33,7 @@ $loginMessage = $security->doLogin();
   <title>Legendary Motorsport</title>
 </head>
 
-<body>
+<body id ="cos">
 
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark transparent_black fixed-top">
@@ -164,25 +164,7 @@ $loginMessage = $security->doLogin();
 
 
   <!-- Modal confirmacion compra -->
-  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title center" id="exampleModalLongTitle">Confirmación de compra</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          ¿Está seguro de realizar la compra?
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-small btn--no" data-dismiss="modal">No</button>
-          <button type="button" class="btn btn-small btn--green">Si</button>
-        </div>
-      </div>
-    </div>
-  </div>
+ 
 
 
 <!-- Modal recarga dinero -->
