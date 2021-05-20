@@ -2,7 +2,16 @@ document.addEventListener("DOMContentLoaded",main);
 
 function main(){
 
+
     cargar_anuncios();
+
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+
+        // INHABILITA EL RECARGAR LA PÁGINA AL ENVIAR EL FORMULARIO//
+        e.preventDefault();
+        console.log("Has hecho click en enviar");
+    });
+
 
     function cargar_anuncios() {
 

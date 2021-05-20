@@ -33,52 +33,52 @@ $loginMessage = $security->doLogin();
   <title>Legendary Motorsport</title>
 </head>
 
-<body id ="cos">
+<body id="cos">
 
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark transparent_black fixed-top">
     <div class="container">
 
-                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav">
-                      <li class="nav-item active">
-                        <a class="nav-link effect-shine fuente_navbar" href="#">Inicio
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link effect-shine fuente_navbar" href="#">Servicios</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link effect-shine fuente_navbar" href="formulario_venta.php">Vende tu coche</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link effect-shine fuente_navbar" data-toggle = "modal" href="#modal_contacto">Contáctanos</a>
-                      </li>
-                    </ul>
-                    <ul class="navbar-nav ml-auto email">
-                      <li class="nav-item">
-                        <a class="nav-link fuente_navbar blanco"><span class="blanco email" id = "dinerito"><?= $security->getUserData(); ?></span>
-                      </li>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link effect-shine fuente_navbar" href="#">Inicio
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link effect-shine fuente_navbar" href="#">Servicios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link effect-shine fuente_navbar" href="formulario_venta.php">Vende tu coche</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link effect-shine fuente_navbar" data-toggle="modal" href="#modal_contacto">Contáctanos</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto email">
+          <li class="nav-item">
+            <a class="nav-link fuente_navbar blanco"><span class="blanco email" id="dinerito"><?= $security->getUserData(); ?></span>
+          </li>
 
-                      <div>
-                        <li class="nav-item">
-                          <a class="nav-brand icon" data-toggle="modal" href="#money_modal"><img src="../public/img/plus.png" class="top"></img></a>
-                        </li>
-                      </div>
-                      <li>
-                        <a class="nav-link fuente_navbar blanco money" id="monederoWallet">
+          <div>
+            <li class="nav-item">
+              <a class="nav-brand icon" data-toggle="modal" href="#money_modal"><img src="../public/img/plus.png" class="top"></img></a>
+            </li>
+          </div>
+          <li>
+            <a class="nav-link fuente_navbar blanco money" id="monederoWallet">
 
-                  
-                        </a>
-                      </li>
 
-                    </ul>
-                  </div>
-                </div>
-              </nav>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
 
   <!-- Page Content -->
   <div class="container">
@@ -146,13 +146,13 @@ $loginMessage = $security->doLogin();
           <h1 class="my-4 title effect-underline fuente_navbar">Anuncios Activos</h1>
         </div>
 
-        </div>
+      </div>
       <!-- /.row -->
 
-      </div>
+    </div>
     <!-- /.col-lg-9 -->
 
-     </div>
+  </div>
   <!-- /.row -->
 
   </div>
@@ -164,10 +164,10 @@ $loginMessage = $security->doLogin();
 
 
   <!-- Modal confirmacion compra -->
- 
 
 
-<!-- Modal recarga dinero -->
+
+  <!-- Modal recarga dinero -->
   <div class="modal fade" id="money_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
@@ -185,7 +185,7 @@ $loginMessage = $security->doLogin();
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="fa fa-user"></i></span>
                 </div>
-                <input type="number" class="form-control" name="cantidad" id="cantidad" required = "">
+                <input type="number" class="form-control" name="cantidad" id="cantidad" required="">
               </div> <!-- input-group.// -->
             </div> <!-- form-group.// -->
 
@@ -195,7 +195,7 @@ $loginMessage = $security->doLogin();
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="fa fa-credit-card"></i></span>
                 </div>
-                <input type="text" class="form-control" maxlength = "16">
+                <input type="text" class="form-control" maxlength="16">
               </div> <!-- input-group.// -->
             </div> <!-- form-group.// -->
 
@@ -257,43 +257,43 @@ $loginMessage = $security->doLogin();
 
 
   <!-- Modal contacto -->
-           <div class="modal fade" id="modal_contacto" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                  
-                  
-                
-                  <div class="modal-header">
-                  <h5 class="modal-title modal_precios"> Contáctanos</h5><img src = "../public/img/logo.svg" class = "icono"></img>
-                  </div>
-                  <div class="card-body">
-                      <form>
-                          <div class="form-group">
-                              <label for="name">Nombre</label>
-                              <input type="text" class="form-control" id="nombre" aria-describedby="emailHelp" >
-                          </div>
-                          <div class="form-group">
-                              <label for="email">Email</label>
-                              <input type="email" class="form-control" id="email" aria-describedby="emailHelp"  required>
-                              <small id="emailHelp" class="form-text text-muted">Nunca compartiremos tu email , tus mensajes son privados.</small>
-                          </div>
-                          <div class="form-group">
-                              <label for="message">Mensaje</label>
-                              <textarea class="form-control" id="message" rows="6" required></textarea>
-                          </div>
-                          <div class="mx-auto">
-                          <button type="submit" class="btn btn-primary text-right">Enviar</button>
-                        </div>
-                      </form>
-                    </div>
-                    </div>
-                  </div>
-                  </div>
-              
-           
-     
-                  
-                   
+  <div class="modal fade" id="modal_contacto" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+
+
+
+        <div class="modal-header">
+          <h5 class="modal-title modal_precios"> Contáctanos</h5><img src="../public/img/logo.svg" class="icono"></img>
+        </div>
+        <div class="card-body">
+        <form method="POST" action="sendEmail.php">
+          <div class="form-group">
+            <label for="name">Nombre</label>
+            <input type="text" class="form-control" id="nombre" name="contactName" aria-describedby="emailHelp">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="contactEmail" aria-describedby="emailHelp" required>
+            <small id="emailHelp" class="form-text text-muted">Nunca compartiremos tu email , tus mensajes son privados.</small>
+          </div>
+          <div class="form-group">
+            <label for="message">Mensaje</label>
+            <textarea class="form-control" id="message" name="contactMessage" rows="6" required></textarea>
+          </div>
+          <div class="mx-auto">
+            <button type="submit" class="btn btn-primary text-right">Enviar</button>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
 
 
 

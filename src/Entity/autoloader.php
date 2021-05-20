@@ -5,6 +5,7 @@ function cargador($clase)
     $fileExist = false;
     foreach ($dir as $directorio) {
         $fichero = __DIR__ . "/$directorio/{$clase}.php";
+        //echo $fichero."<br>";
         if (file_exists($fichero)) {
             require_once $fichero;
             $fileExist = true;
