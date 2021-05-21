@@ -3,9 +3,4 @@
 include_once("autoloader.php");
 
 $comprarAnuncio = new comprarAnuncio();
-echo json_encode($comprarAnuncio->update());
-
-
-
-
-?>
+echo json_encode($comprarAnuncio->delete());

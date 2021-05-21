@@ -54,12 +54,28 @@ CREATE TABLE `model` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `Usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(60) NOT NULL,
+  `apellidos` varchar(60) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `tlf` int(60) NOT NULL,
+  `dinero` int(11),
+  `securePassword` varchar(60) COLLATE utf8_spanish_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
 -- Table structure for table `Anuncios`
 --
 
-CREATE TABLE `Anuncios` (
+CREATE TABLE `anuncios` (
   `id_anuncio` int(11) NOT NULL AUTO_INCREMENT,
   `make_id` int(11) NOT NULL,
+  `id_usuario` int(11),
   `model_id` int(11) NOT NULL,
   `km` int(60) NOT NULL,
   `ano` year(4) NOT NULL,
@@ -68,28 +84,14 @@ CREATE TABLE `Anuncios` (
   `foto` varchar(255),
   PRIMARY KEY (`id_anuncio`),
   CONSTRAINT Fk_make_id_Anuncios FOREIGN KEY(`make_id`) REFERENCES make(`id`),
-  CONSTRAINT Fk_model_id_Anuncios FOREIGN KEY(`model_id`) REFERENCES model(`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  CONSTRAINT Fk_model_id_Anuncios FOREIGN KEY(`model_id`) REFERENCES model(`id`),
+  CONSTRAINT Fk_id_Usuarios FOREIGN KEY(`id_usuario`) REFERENCES usuarios(`id`)
+);
+
 
 -- --------------------------------------------------------
 
---
--- Table structure for table `Usuarios`
---
 
-CREATE TABLE `Usuarios` (
-  `id` int(11),
-  `nombre` varchar(60) NOT NULL,
-  `apellidos` varchar(60) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `tlf` int(60) NOT NULL,
-  `dinero` int(11),
-  `id_anuncio` int(11),
-  `userPassword` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
-  `securePassword` varchar(60) COLLATE utf8_spanish_ci NOT NULL,
-  PRIMARY KEY (`id`),
-  constraint Fk_id_anuncio foreign key( `id_anuncio`) references Anuncios( `id_anuncio`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -1493,17 +1495,6 @@ INSERT INTO `model` (`id`, `make_id`, `code`, `title`) VALUES
 (1314, 71, 'YUOTH', 'Other Yugo Models');
 
 -- --------------------------------------------------------
-
---
--- AUTO_INCREMENT for dumped tables
---
-
-
---
--- AUTO_INCREMENT for table `Usuarios`
---
-ALTER TABLE `Usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

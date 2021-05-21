@@ -37,46 +37,46 @@ $loginMessage = $security->doLogin();
   <nav class="navbar navbar-expand-lg navbar-dark transparent_black fixed-top">
     <div class="container">
 
-                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav">
-                      <li class="nav-item">
-                        <a class="nav-link effect-shine fuente_navbar" href="indexSesion.php">Inicio
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link effect-shine fuente_navbar" href="#">Servicios</a>
-                      </li>
-                      <li class="nav-item active">
-                        <a class="nav-link effect-shine fuente_navbar" href="formulario_venta.php">Vende tu coche</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link effect-shine fuente_navbar" data-toggle = "modal" href="#modal_contacto">Contáctanos</a>
-                      </li>
-                    </ul>
-                    <ul class="navbar-nav ml-auto email">
-                      <li class="nav-item">
-                        <a class="nav-link fuente_navbar blanco"><span class="blanco email"><?= $security->getUserData(); ?></span>
-                      </li>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link effect-shine fuente_navbar" href="indexSesion.php">Inicio
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link effect-shine fuente_navbar" href="#">Servicios</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link effect-shine fuente_navbar" href="formulario_venta.php">Vende tu coche</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link effect-shine fuente_navbar" data-toggle="modal" href="#modal_contacto">Contáctanos</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto email">
+          <li class="nav-item">
+            <a class="nav-link fuente_navbar blanco"><span class="blanco email"><?= $security->getUserData(); ?></span>
+          </li>
 
-                      <div>
-                        <li class="nav-item">
-                          <a class="nav-brand icon" data-toggle="modal" href="#money_modal"><img src="../public/img/plus.png" class="top"></img></a>
-                        </li>
-                      </div>
-                      <li>
-                        <a class="nav-link fuente_navbar blanco money" id="monederoWallet">
+          <div>
+            <li class="nav-item">
+              <a class="nav-brand icon" data-toggle="modal" href="#money_modal"><img src="../public/img/plus.png" class="top"></img></a>
+            </li>
+          </div>
+          <li>
+            <a class="nav-link fuente_navbar blanco money" id="monederoWallet">
 
-                  
-                        </a>
-                      </li>
 
-                    </ul>
-                  </div>
-                </div>
-              </nav>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
 
   <!-- Page Content -->
   <div class="container">
