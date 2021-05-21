@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded",main);
 function main(){
 
     cargar_anuncios();
+    
 
     function cargar_anuncios() {
 
@@ -20,11 +21,12 @@ function main(){
     
     }
 
+    function modal(){
+       /* let cos = document.getElementById("cos");
 
-    function rellenador_anuncios(array_anuncios_json){
-        
-        let cos = document.getElementById("cos");
-
+        let modal = new bootstrap.Modal(document.getElementById("modal"),{
+            keyboard: false
+        });
         let modal = document.createElement("div");
         modal.className = "modal fade";
         modal.id = "exampleModalCenter";
@@ -86,8 +88,27 @@ function main(){
         boton_si.className = "btn btn-small btn--green";
         boton_si.setAttribute("type","button");
         boton_si.innerHTML = "SI"
+        boton_si.id = "boton_si";
         footer.appendChild( boton_si );
 
+    
+
+        modal.addEventListener("",function (e){
+            let button = e.relatedTarget;
+            let id = boton.value;
+            console.log("hola");
+            document.getElementById("boton_si").setAttribute("onclick", function(){
+                    console.log("hola");
+                    console.log(id);
+                    
+            });
+        })*/
+    }
+
+    function rellenador_anuncios(array_anuncios_json){
+        
+        
+        modal();
 
 
 
@@ -169,16 +190,36 @@ function main(){
  
              let boton = document.createElement("button");
              boton.className = "btn btn--radius-2 btn--red";
-             boton.setAttribute("data-toggle","modal")
-             boton.setAttribute("data-target","#exampleModalCenter")
+             boton.id = "boton_compra"
+             boton.value  = array_anuncios_json[x].id_anuncio;
+            boton.value  = array_anuncios_json[x].id_anuncio;
              boton.innerHTML = "COMPRAR";
- 
              footer.appendChild(boton);
+
+             
+
+
            }
            
         }
 
+        const xhttp = new XMLHttpRequest();
+            let id_compra = document.getElementById("boton_compra");
+            let valor = id_compra.value;
+            
+            
+            xhttp.addEventListener("readystatechange", function(){
+                if(this.readyState == 4 && this.status == 200){
+
+                    //rellenador_anuncios(JSON.parse(this.responseText));
+                }
+            });
+
+            xhttp.open("GET","../src/Entity/showcomprarAnuncio.php?"+valor, true);
+            xhttp.send();
+
     }
 
+   
 }
 
