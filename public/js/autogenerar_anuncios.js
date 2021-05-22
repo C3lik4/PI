@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", main);
 
 function main() {
 
+
     cargar_anuncios();
     //comprarAnuncio();
 
