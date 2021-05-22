@@ -195,18 +195,6 @@ function main() {
                 boton.value = array_anuncios_json[x].id_anuncio;
                 boton.innerHTML = "COMPRAR";
 
-                boton.addEventListener("click", function (e) {
-
-                    let spanEuro = document.getElementById("spanDinero");
-                    console.log(spanEuro);
-                    console.log("hola");
-                    console.log(boton.value);
-                    restarDinero();
-                    deleteAnuncios();
-                    updateCompras();
-
-                })
-
                 function updateCompras() {
 
                     const xhttp = new XMLHttpRequest();
@@ -249,7 +237,25 @@ function main() {
 
                 }
 
+                function updateAnuncios() {
+
+                    let datosAnteriores = document.getElementById("contenedor");
+                    while (datosAnteriores[0]) {
+                        datosAnteriores[0].parentNode.removeChild(datosAnteriores[0]);
+                    }
+                }
+
+                boton.addEventListener("click", function (e) {
+                    console.log(boton.value);
+                    restarDinero();
+                    deleteAnuncios();
+                    updateAnuncios();
+                    location.reload();
+                })
+
                 footer.appendChild(boton);
+
+
                 //console.log(boton.value);
 
 
