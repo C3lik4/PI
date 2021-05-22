@@ -205,23 +205,23 @@ function main() {
 
                         }
                     });
-
                     xhttp.open("GET", "../src/Entity/showcomprarAnuncio.php?id=" + boton.value, true);
-                    
+                    xhttp.send();
+                })
 
-                    
+                boton.addEventListener("click", function (e) {
+                    console.log("adios");
+                    console.log(boton.value);
+                    const xhttp = new XMLHttpRequest();
                     xhttp.addEventListener("readystatechange", function () {
                         if (this.readyState == 4 && this.status == 200) {
 
                         }
                     });
-
                     xhttp.open("GET", "../src/Entity/deleteAnuncios.php?id=" + boton.value, true);
                     xhttp.send();
-                    window.location.reload();
 
                 })
-
                 footer.appendChild(boton);
                 //console.log(boton.value);
 
@@ -231,6 +231,13 @@ function main() {
         }
 
     }
+    /* function updateAnuncios() {
+
+        let datosAnteriores = document.getElementById("botonCompra");
+        while (datosAnteriores[0]) {
+            datosAnteriores[0].parentNode.removeChild(datosAnteriores[0]);
+        }
+    } */
 
 }
 
