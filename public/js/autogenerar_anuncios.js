@@ -196,6 +196,7 @@ function main() {
                 boton.innerHTML = "COMPRAR";
 
                 boton.addEventListener("click", function (e) {
+
                     let spanEuro = document.getElementById("spanDinero");
                     console.log(spanEuro);
                     console.log("hola");
