@@ -194,24 +194,34 @@ function main() {
                 boton.id = "botonCompra";
                 boton.value = array_anuncios_json[x].id_anuncio;
                 boton.innerHTML = "COMPRAR";
+
                 boton.addEventListener("click", function (e) {
                     let spanEuro = document.getElementById("spanDinero");
                     console.log(spanEuro);
                     console.log("hola");
                     console.log(boton.value);
+                    restarDinero();
+                    deleteAnuncios();
+                    updateCompras();
+
+                })
+
+                function updateCompras() {
+
                     const xhttp = new XMLHttpRequest();
                     xhttp.addEventListener("readystatechange", function () {
                         if (this.readyState == 4 && this.status == 200) {
 
                         }
                     });
-                    xhttp.open("GET", "../src/Entity/showcomprarAnuncio.php?id=" + boton.value, true);
+                    xhttp.open("GET", "../src/Entity/updateCompras.php?id=" + boton.value, true);
                     xhttp.send();
-                })
 
-                boton.addEventListener("click", function (e) {
-                    console.log("adios");
-                    console.log(boton.value);
+
+                }
+
+                function deleteAnuncios() {
+
                     const xhttp = new XMLHttpRequest();
                     xhttp.addEventListener("readystatechange", function () {
                         if (this.readyState == 4 && this.status == 200) {
@@ -221,7 +231,23 @@ function main() {
                     xhttp.open("GET", "../src/Entity/deleteAnuncios.php?id=" + boton.value, true);
                     xhttp.send();
 
-                })
+
+                }
+
+                function restarDinero() {
+
+                    const xhttp = new XMLHttpRequest();
+                    xhttp.addEventListener("readystatechange", function () {
+                        if (this.readyState == 4 && this.status == 200) {
+
+                        }
+                    });
+                    xhttp.open("GET", "../src/Entity/showcomprarAnuncio.php?id=" + boton.value, true);
+                    xhttp.send();
+
+
+                }
+
                 footer.appendChild(boton);
                 //console.log(boton.value);
 
@@ -231,13 +257,6 @@ function main() {
         }
 
     }
-    /* function updateAnuncios() {
-
-        let datosAnteriores = document.getElementById("botonCompra");
-        while (datosAnteriores[0]) {
-            datosAnteriores[0].parentNode.removeChild(datosAnteriores[0]);
-        }
-    } */
 
 }
 
