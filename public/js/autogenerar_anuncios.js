@@ -195,19 +195,20 @@ function main() {
                 boton.value = array_anuncios_json[x].id_anuncio;
                 boton.innerHTML = "COMPRAR";
                 boton.addEventListener("click", function (e) {
+
                     let spanEuro = document.getElementById("spanDinero");
                     console.log(spanEuro);
                     console.log("hola");
                     console.log(boton.value);
-                    const xhttp = new XMLHttpRequest();
-                    xhttp.addEventListener("readystatechange", function () {
+                    const xhttp2 = new XMLHttpRequest();
+                    xhttp2.addEventListener("readystatechange", function () {
                         if (this.readyState == 4 && this.status == 200) {
 
                         }
                     });
 
-                    xhttp.open("GET", "../src/Entity/showcomprarAnuncio.php?id=" + boton.value, true);
-                    
+                    xhttp2.open("GET", "../src/Entity/showcomprarAnuncio.php?id=" + boton.value, true);
+                    xhttp2.send();
 
                     
                     xhttp.addEventListener("readystatechange", function () {

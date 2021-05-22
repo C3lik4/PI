@@ -15,6 +15,7 @@ $loginMessage = $security->doLogin();
   <meta name="author" content="">
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="css/main_page.css" rel="stylesheet">
+  <link href="css/servicios.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Permanent+Marker&display=swap" rel="stylesheet">
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -45,11 +46,11 @@ $loginMessage = $security->doLogin();
                   <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav">
                       <li class="nav-item active">
-                        <a class="nav-link effect-shine fuente_navbar" href="#">Inicio
+                        <a class="nav-link effect-shine fuente_navbar" href="indexSesion.php">Inicio
                         </a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link effect-shine fuente_navbar" href="servicios.php">Servicios</a>
+                        <a class="nav-link effect-shine fuente_navbar" href="#">Servicios</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link effect-shine fuente_navbar" href="formulario_venta.php">Vende tu coche</a>
@@ -79,83 +80,66 @@ $loginMessage = $security->doLogin();
                   </div>
                 </div>
               </nav>
+    </div>  
+        <!-- Page Content -->
+        <div class="container">
 
-  <!-- Page Content -->
-  <div class="container">
+            <div class="row">
 
-    <div class="row">
+            <div class="col-lg-3">
 
-      <div class="col-lg-3">
+                <div class="shimmer">
+                <h1 class=" my-4 title"><span class="titleWhite">L</span>egendary <span class="titleWhite">M</span>otorsport</h1>
+                </div>
 
-        <div class="shimmer">
-          <h1 class=" my-4 title"><span class="titleWhite">L</span>egendary <span class="titleWhite">M</span>otorsport</h1>
-        </div>
-
-        <h2 class="my-3 fuente_navbar title">Filtrar</h2>
-        <div class="list-group bordes ">
-          <a href="#" class="list-group-item more_transparent_black">0 - 500$</a>
-          <a href="#" class="list-group-item more_transparent_black">500 - 10000$</a>
-          <a href="#" class="list-group-item more_transparent_black">10000$ - ∞</a>
-        </div>
-
-      </div>
-
-
-      <!-- /.col-lg-3 -->
-
-      <div class="col-lg-9" id="contenedor">
-
-        <div id="carouselExampleIndicators" class="carousel slide my-4 bordes " data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-
-          </ol>
-          <div class="carousel-inner" role="listbox">
-            <div class="carousel-item active">
-              <img class="d-block img-fluid" src="media/legendary_motorsport2.png" alt="First slide">
             </div>
-            <div class="carousel-item">
-              <img class="d-block img-fluid" src="media/mercedes.png" alt="Second slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block img-fluid" src="media/lambo.jpg" alt="Third slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block img-fluid" src="media/about-4.jpeg" alt="Third slide">
-            </div>
+            
 
-          </div>
-          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
+            <div class='container-fluid mx-auto mt-5 mb-5 col-12' style="text-align: center">
+            <div class="hd fuente_navbar">¿Por qué la gente cree en nosotros?</div>
+            <p><small class="text-muted"> <br /></small></p>
+            <div class="row" style="justify-content: center">
+                <div class="card col-md-3 col-12">
+                    <div class="card-content">
+                        <div class="card-body"> <img class="img" src="https://i.imgur.com/S7FJza5.png" />
+                            <div class="shadow"></div>
+                            <div class="card-title"> Somos gratuitos </div>
+                            <div class="card-subtitle">
+                                <p> <small class="text-muted ">Al contrario que la competencia , no cargamos altas comisiones ni de venta ni de compra , eso nos hace únicos en el sector. En Legendary Motorsport solo pagas por lo que compras.</small> </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card col-md-3 col-12 ml-2">
+                    <div class="card-content">
+                        <div class="card-body"> <img class="img" src="https://i.imgur.com/xUWJuHB.png" />
+                            <div class="card-title"> Vamos al grano </div>
+                            <div class="card-subtitle">
+                                <p> <small class="text-muted"> No hay intermediarios , de modo que todos los vehículos pasan por nuestras manos , asegurando así la máxima calidad y fiabilidad en el proceso de compra y venta. </small> </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card col-md-3 col-12 ml-2">
+                    <div class="card-content">
+                        <div class="card-body"> <img class="img rck" src="https://i.imgur.com/rG3CGn3.png" />
+                            <div class="card-title"> Más rápido imposible </div>
+                            <div class="card-subtitle">
+                                <p> <small class="text-muted">Comprar o vender coches nunca había sido un proceso tan veloz y simple. Para vender tu coche rellena el formulario , sube una foto y listo , el dinero estará en tu cuenta una vez el coche haya sido vendido. Y para comprar , bueno , te imaginas como funciona. ( ͡° ͜ʖ ͡°)  </small> </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>  
         </div>
+    </div>
+    
 
-        <div class="col-lg-3">
 
-        </div>
 
-        <div class="col">
-          <h1 class="my-4 title effect-underline fuente_navbar">Anuncios Activos</h1>
-        </div>
+   
 
-        </div>
-      <!-- /.row -->
 
-      </div>
-    <!-- /.col-lg-9 -->
-
-     </div>
-  <!-- /.row -->
-
-  </div>
   <!-- /.container -->
   <!-- Button trigger modal -->
 
@@ -298,12 +282,7 @@ $loginMessage = $security->doLogin();
 
 
   <!-- Footer -->
-  <footer class="py-3 transparent_black">
-    <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Legendary Motorsports 2021</p>
-    </div>
 
-  </footer>
 
 
   <script src="vendor/jquery/jquery.min.js"></script>
