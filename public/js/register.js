@@ -10,6 +10,10 @@ function main() {
 
         // LLAMAMOS A LA FUNCION ENVIARFORM PASANDOLE EL ELEMENTO ACTUAL //
         enviarForm(e.currentTarget);
+        window.alert("Te has registrado correctamente");
+        setTimeout(function () {
+            window.location.href = "../public/login.php";
+        },1000);
         console.log("Has hecho click en enviar");
     });
 
@@ -29,4 +33,5 @@ function enviarForm(formElement) {
     });
     xhttp.open("POST", "../src/Entity/saveRegister.php", true);
     xhttp.send(formData);
+
 }
