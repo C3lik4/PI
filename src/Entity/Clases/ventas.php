@@ -2,7 +2,7 @@
 
 
 
-class ventas extends Conexion implements crudInterface
+class ventas extends Conexion implements CrudInterface
 {
 
     public function __construct()

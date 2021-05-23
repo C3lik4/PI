@@ -49,16 +49,6 @@ class comprarAnuncio extends Conexion implements ViewInterface, CrudInterface
 
     public function add($values = null)
     {
-        // $idPoblacion = $_POST["poblacion"];
-        // $email = $_POST["email"];
-        // $asunto = $_POST["asunto"];
-        // $mensaje = $_POST["mensaje"];
-
-
-        // $stmt = $this->conn->prepare("INSERT INTO usuarios(dinero) VALUES (?,?,?,?)");
-        // $stmt->bind_param("isss", $idPoblacion, $email, $asunto, $mensaje);
-        // $result = $stmt->execute();
-        // $stmt->close();
-        // return ($result);
+    
     }
 }
